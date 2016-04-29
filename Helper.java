@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Helper {
-	//»ñµÃÃ»ÓĞÍØÕ¹ÃûµÄÎÄ¼şÃû
+	//è·å¾—æ²¡æœ‰æ‹“å±•åçš„æ–‡ä»¶å
 	public static String getNameWithOutExtension(String fileName){
 		int lastIndexOfDot = fileName.lastIndexOf(".");
 		if(lastIndexOfDot < 0)
@@ -19,38 +19,38 @@ public class Helper {
 	
 	public static boolean isLegalName(File sourceImg,String newFileName,File targetDir){
 
-		if(newFileName == ""+(char)0 || newFileName.length() == 0){//µ±ÊäÈëµÄÄÚÈİÎª¿ÕÊ±Îª×Ö·û´®""+(char)0£¬¿ÉÄÜÊÇÎªÁËÓëÈ¡ÏûÊ±×öÇø·Ö
-			JOptionPane.showMessageDialog(null, "ÎÄ¼şÃû²»ÄÜÎª¿Õ",
-					"ÌáÊ¾",javax.swing.JOptionPane.WARNING_MESSAGE);
+		if(newFileName == ""+(char)0 || newFileName.length() == 0){//å½“è¾“å…¥çš„å†…å®¹ä¸ºç©ºæ—¶ä¸ºå­—ç¬¦ä¸²""+(char)0ï¼Œå¯èƒ½æ˜¯ä¸ºäº†ä¸å–æ¶ˆæ—¶åšåŒºåˆ†
+			JOptionPane.showMessageDialog(null, "æ–‡ä»¶åä¸èƒ½ä¸ºç©º",
+					"æç¤º",javax.swing.JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		String regex = "[\\/:[*][?]\"<>|]";
 		Pattern p = Pattern.compile(regex);
 		Matcher matcher = p.matcher(newFileName);
 		if(matcher.find()){
-			JOptionPane.showMessageDialog(null, "ÎÄ¼şÃû²»ÄÜ°üº¬ÏÂÁĞÈÎºÎ·ûºÅÖ®Ò»£º\n"+"\\ / : * ? \" < > |",
-					"ÌáÊ¾",javax.swing.JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "æ–‡ä»¶åä¸èƒ½åŒ…å«ä¸‹åˆ—ä»»ä½•ç¬¦å·ä¹‹ä¸€ï¼š\n"+"\\ / : * ? \" < > |",
+					"æç¤º",javax.swing.JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		File file = new File(targetDir.getAbsolutePath()+"\\"+newFileName + "."+Helper.getExtension(sourceImg.getName()));
-		System.out.println(file.getAbsolutePath());
+		//System.out.println(file.getAbsolutePath());
 		if(file.exists()){
-			JOptionPane.showMessageDialog(null, "ÎÄ¼şÃûÒÑ´æÔÚ","ÌáÊ¾",javax.swing.JOptionPane.WARNING_MESSAGE);		
+			JOptionPane.showMessageDialog(null, "æ–‡ä»¶åå·²å­˜åœ¨","æç¤º",javax.swing.JOptionPane.WARNING_MESSAGE);		
 			return false;
 		}
 		return true;
 	}
 	
 	
-	//»ñÈ¡ÎÄ¼şÍØÕ¹Ãû
+	//è·å–æ–‡ä»¶æ‹“å±•å
 	public static String getExtension(String fileName){
 		int lastIndexOfDot = fileName.lastIndexOf(".");
 		if(lastIndexOfDot < 0)
-			return "";//Ã»ÓĞÍØÕ¹Ãû
+			return "";//æ²¡æœ‰æ‹“å±•å
 		String extension = fileName.substring(lastIndexOfDot+1);
 		return extension;
 	}
-	//»ñµÃ¿ÉÓÃsocket
+	//è·å¾—å¯ç”¨socket
 	public static Socket getUsefulSocket(String touchIp,int port){
 		
 		System.out.println(touchIp);
@@ -66,8 +66,22 @@ public class Helper {
 		}
 		return socket;
 	}
+	
+	//åˆ¤æ–­ipæ˜¯å¦åˆæ³•
+	public static boolean judgeIp(String ipStr){
+		if(ipStr == null || ipStr.equals("") || ipStr.length() == 0){
+			JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥å¯¹æ–¹Ipï¼", "Warning", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		String regex = "\\d+[.]\\d+[.]\\d+[.]\\d+";
+		if(!ipStr.matches(regex)){
+			return false;
+		}
+		return true;
+	}
+		
 	/*
-	//»ñµÃ¿ÉÓÃserver
+	//è·å¾—å¯ç”¨server
 	public static Socket getUsefulServer(int port){
 		
 		System.out.println(touchIp);
