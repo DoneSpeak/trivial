@@ -105,11 +105,11 @@ public class ChatFrame extends JFrame implements ActionListener{
 		boxH2.add(Box.createHorizontalStrut(4));
 		boxH2.add(myPostField);
 		boxH2.add(Box.createHorizontalStrut(7));
-		boxH2.add(startBtn);
-		boxH2.add(Box.createHorizontalStrut(7));
 		boxH2.add(sendBtn);
 		boxH2.add(Box.createHorizontalStrut(7));
 		boxH2.add(clearBtn);
+		boxH2.add(Box.createHorizontalStrut(7));
+		boxH2.add(startBtn);
 		boxH2.add(Box.createHorizontalStrut(7));
 		boxH2.add(histBtn);
 		baseBox.add(Box.createVerticalStrut(8));
@@ -165,7 +165,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 				return;
 			}
 			String text = msgField.getText();
-			if(sending == true){
+			if(text.equals("[fasongwenjian]") && sending == true){
 				//暂时限制一次仅可以发送一个文件
 				JOptionPane.showMessageDialog(null, "有文件正在发送，请稍后！", "提醒", JOptionPane.WARNING_MESSAGE);
 				return;
@@ -197,7 +197,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 						if (returnVal == JFileChooser.APPROVE_OPTION) {			
 							//得到选择的文件名
 							choosefile = fc.getSelectedFile();
-							//TODO 限制发送文件大小
+							//TODO 限制发送文件大小,暂时不做限制处理
 							/*
 							while(choosefile.length() < ){
 								
@@ -216,12 +216,17 @@ public class ChatFrame extends JFrame implements ActionListener{
 				//需要确认发送再发送
 				InetAddress address = null;
 				address = InetAddress.getByName(TouchIp);
-				byte msg[] = text.trim().getBytes();	
+				//将post放到消息中，以便区分第三者介入
+				String postStr = myPost + "#";				
+				text = postStr + text;
+				byte msg[] = text.trim().getBytes();
+				
 				DatagramPacket data = new DatagramPacket(msg,msg.length,address,toPort);
 				DatagramSocket mail = new DatagramSocket();
 				mail.send(data);
 				mail.close();
-				
+				out.close();
+				writer.close();
 			} catch (Exception err) {
 				JOptionPane.showMessageDialog(null, "消息发送失败！", "Warning", JOptionPane.WARNING_MESSAGE);
 				err.printStackTrace();
@@ -321,13 +326,14 @@ public class ChatFrame extends JFrame implements ActionListener{
 				BufferedWriter writer = new BufferedWriter(out);
 				writer.write("");
 				writer.flush();
+				out.close();
 			} catch (IOException e1) {
 				
 				e1.printStackTrace();
 			}
 			
 			
-			historyText.setText("");
+			historyText.setText("历史记录为空"+"\n");
 			historyFile.delete();
 			historyFile = new File(IpField.getText() + "-" + toPort + ".txt");
 		}
@@ -342,8 +348,8 @@ public class ChatFrame extends JFrame implements ActionListener{
 			}
 			
 			TouchIp = IpField.getText();
-			if(TouchIp.equals("") || TouchIp == null || TouchIp.length() == 0){
-				JOptionPane.showMessageDialog(null, "请输入对方Ip！", "Warning", JOptionPane.WARNING_MESSAGE);
+			if(!Helper.judgeIp(TouchIp)){
+				JOptionPane.showMessageDialog(null, "请确保对方Ip输入正确！", "Warning", JOptionPane.WARNING_MESSAGE);
 				return ;
 			}
 			try
@@ -366,6 +372,15 @@ public class ChatFrame extends JFrame implements ActionListener{
 			chatText.setText("聊天开始"+"\n");
 			chatText.append("------------------"+"\n");
 			chatText.setCaretPosition(chatText.getText().length());
+			if(startSuccess){
+				IpField.setEditable(false);
+				postField.setEditable(false);
+				myPostField.setEditable(false);
+				startBtn.setText("end");
+				startOrEnd = START;
+				hasStart = true;
+			}
+			
 			new Thread(new Runnable(){
 				@Override
 				public void run(){
@@ -388,6 +403,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 						myPostField.setEditable(true);
 						startBtn.setText("start");
 						startOrEnd = END;
+						startSuccess = true;
 						
 						err.printStackTrace();
 						JOptionPane.showMessageDialog(null, "出错！将检查端口是否重复使用！", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -407,12 +423,33 @@ public class ChatFrame extends JFrame implements ActionListener{
 								break;
 							}
 							String host = pack.getAddress().getHostAddress();
-							//TODO port放到消息包中传输
-							int port = pack.getPort();
+							
 							System.out.println("收到消息！");
 							String message = new String(pack.getData(),0,pack.getLength());
-							if(!host.equals(TouchIp)){
-								JOptionPane.showMessageDialog(null, "地址："+host+":"+port+"\n"+message);
+							String portStr = message.substring(0,message.indexOf("#"));
+							message = message.substring(message.indexOf("#")+1);
+							int port = Integer.parseInt(portStr);
+							
+							if(!host.equals(TouchIp) || port != toPort){
+								String infoStr = "IP地址："+host+"\n"+"端口号：" + port+"\n"+message + "\n" + "是否回复？";
+								int n = JOptionPane.showConfirmDialog(null, infoStr,"收到其他消息",JOptionPane.YES_NO_OPTION);
+								//JOptionPane.showMessageDialog(null, infoStr);
+								if(n == JOptionPane.YES_OPTION){
+									String str = JOptionPane.showInputDialog(null, "请输入回复信息","回复"+host+":"+port,JOptionPane.INFORMATION_MESSAGE);
+									if(str != null || str.length() != 0){
+										InetAddress address = null;
+										address = InetAddress.getByName(host);
+										//将post放到消息中，以便区分第三者介入
+										String postStr = myPost + "#";				
+										str = postStr + str;
+										byte _msg[] = str.trim().getBytes();
+										
+										DatagramPacket data = new DatagramPacket(_msg,_msg.length,address,port);
+										DatagramSocket _mail = new DatagramSocket();
+										_mail.send(data);
+										_mail.close();
+									}
+								}
 								continue;
 							}
 							//判断是否为接收指令
@@ -422,7 +459,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 								System.out.println("收到确认");
 								socket = new Socket(TouchIp,toPort);
 								
-								System.out.println("开启成功");
+								System.out.println("与服务器连接成功");
 								DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 								DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(choosefile.getAbsolutePath())));
 								
@@ -431,7 +468,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 								//发送路径测试使用
 								dos.writeUTF(choosefile.getAbsolutePath());
 								dos.flush();
-								
+								System.out.println("文件发送完成\n");
 								//发送文件
 								int read = 0;
 								while(true){
@@ -453,23 +490,42 @@ public class ChatFrame extends JFrame implements ActionListener{
 								dos.close();
 								dis.close();
 								socket.close();
-								sending = false; //发送状态取消
+								sending = false; //发送状态取消、
+								JOptionPane.showMessageDialog(null, "文件发送完成！", "提示", JOptionPane.WARNING_MESSAGE);
 							}else if(message.equals("#!!!N***&")){
 								//拒绝接收指令
-								JOptionPane.showMessageDialog(null, "对方拒绝接受！", "Warning", JOptionPane.WARNING_MESSAGE);
+								JOptionPane.showMessageDialog(null, "对方拒绝接收！", "Warning", JOptionPane.WARNING_MESSAGE);
+								sending = false;
 							}else if(message.equals("[fasongwenjian]")){
+								//显示发送消息
+								out = new FileWriter(historyFile,true);
+								writer = new BufferedWriter(out);
+								Date nowTime = new Date();
+								SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+								String info = ">> "+InetAddress.getByName(IpField.getText()).getHostName()+": "+matter.format(nowTime);
+								chatText.append(info + "\n");
+								writer.write(info + "\r\n");
+								chatText.append(message + "\n\n");
+								writer.write(message + "\r\n\n");
+								writer.flush();
+								out.close();
+								chatText.setCaretPosition(chatText.getText().length());
+								
 								//接受到对方发送文件的指令
 								int n = JOptionPane.showConfirmDialog(null, "对方发来文件，接收吗?", "收到文件", JOptionPane.YES_NO_OPTION); 
 						        if(n == JOptionPane.YES_OPTION) { 
 						        	//选择保存路径
 						        	JFileChooser fChooser = new JFileChooser();
 									fChooser.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY); // 必须先设置选择样式再设置打开对话框
-									fChooser.showDialog(null, "保存");
+									fChooser.showDialog(null, "选择保存路径");
 
 									File saveDir = fChooser.getSelectedFile();
 									if (saveDir == null) {
 										//返回拒绝接受消息
-										byte refuseMsg[] = "#!!!N***&".getBytes();	
+										//将post放到消息中，以便区分第三者介入
+										String msgStr = myPost + "#";				
+										msgStr = msgStr + "#!!!N***&";
+										byte refuseMsg[] = msgStr.getBytes();	
 										
 										InetAddress address = null;
 										address = InetAddress.getByName(TouchIp);
@@ -480,15 +536,19 @@ public class ChatFrame extends JFrame implements ActionListener{
 										refuseMail.close();
 										continue;
 									}
+									//TODO 
 									
-									System.out.println("准备接受文件\n");
+									
 									receivePort = myPost+1; //监督的端口
 									//开启socketServer接收
-
+									System.out.println("服务器接收到大接收文件请求，服务器准备开启！");
 									//ServerSocket server = Helper.getUsefulServer(receivePort);
 									ServerSocket server = new ServerSocket(myPost);
+									System.out.println("接收到服务器开启！");
 									//返回接收消息
-									byte refuseMsg[] = "#!!!Y***&".getBytes();	
+									String msgStr = myPost + "#";				
+									msgStr = msgStr + "#!!!Y***&";
+									byte refuseMsg[] = msgStr.getBytes();
 									
 									InetAddress address = null;
 									address = InetAddress.getByName(TouchIp);
@@ -506,11 +566,36 @@ public class ChatFrame extends JFrame implements ActionListener{
 									
 									String fileName = dis.readUTF();
 									System.out.println("接收文件：" + fileName);
+									//[start] 自定义文件名称
+									String fileN = null;
+									fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
+									if(fileN == null){
+										String _msgStr = myPost + "#";				
+										_msgStr = _msgStr + "#!!!N***&";
+										byte _refuseMsg[] = msgStr.getBytes();	
+										
+										InetAddress _address = null;
+										_address = InetAddress.getByName(TouchIp);
+											
+										DatagramPacket _data = new DatagramPacket(_refuseMsg,_refuseMsg.length,_address,toPort);
+										DatagramSocket _refuseMail = new DatagramSocket();
+										_refuseMail.send(_data);
+										_refuseMail.close();
+										continue;
+									}
+									while(!Helper.isLegalName(new File(fileName),fileN,saveDir)){
+										fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
+									}
+									String savePath = saveDir.getAbsolutePath() + "\\" + fileN + "." + Helper.getExtension(fileName);
+									File saveFile = new File(savePath);
 									
+									System.out.println("自定义文件名：" + savePath);
+									//[end]
+									/*这个是系统自动生成新名字
 									fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
-									System.out.println("文件名：" + fileName);
 									
-									String savePath = saveDir.getAbsolutePath() + "\\" + fileName;
+									
+									String savePath = saveDir.getAbsolutePath() + "\\" + fileN;
 									//如果已存在其后添加 "_new"
 									File saveFile = new File(savePath);
 									while(saveFile.exists()){
@@ -519,6 +604,8 @@ public class ChatFrame extends JFrame implements ActionListener{
 										System.out.println("新路径：" + savePath);
 										saveFile = new File(savePath);
 									}
+									*/
+									System.out.println("开始接收文件\n");
 									DataOutputStream fileOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(saveFile)));
 									while(true){
 										int read = 0;
@@ -536,10 +623,14 @@ public class ChatFrame extends JFrame implements ActionListener{
 									fileOut.close();
 									s.close();
 									server.close();
+									System.out.println("接收文件完成\n");
 									//接受完成
-									JOptionPane.showMessageDialog(null, "文件接受完成！", "提示", JOptionPane.WARNING_MESSAGE);
+									JOptionPane.showMessageDialog(null, "文件接收完成！", "提示", JOptionPane.WARNING_MESSAGE);
 						        }else{ 
-						        	byte refuseMsg[] = "#!!!N***&".getBytes();	
+						        	//返回拒绝接受
+						        	String msgStr = myPost + "#";				
+									msgStr = msgStr + "#!!!N***&";
+									byte refuseMsg[] = msgStr.getBytes();
 									
 									InetAddress address = null;
 									address = InetAddress.getByName(TouchIp);
@@ -563,10 +654,12 @@ public class ChatFrame extends JFrame implements ActionListener{
 								chatText.append(message + "\n\n");
 								writer.write(message + "\r\n\n");
 								writer.flush();
+								out.close();
 								chatText.setCaretPosition(chatText.getText().length());
 							}
 						}
 						catch(Exception err){
+							err.printStackTrace();
 							JOptionPane.showMessageDialog(null, "消息接收出错！", "Warning", JOptionPane.WARNING_MESSAGE);
 						}
 					}
@@ -582,14 +675,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 					}
 				}
 			}).start();
-			if(startSuccess){
-				IpField.setEditable(false);
-				postField.setEditable(false);
-				myPostField.setEditable(false);
-				startBtn.setText("end");
-				startOrEnd = START;
-				hasStart = true;
-			}
+			
 		}
 	}
 	
