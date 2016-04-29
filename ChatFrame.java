@@ -33,7 +33,6 @@ public class ChatFrame extends JFrame implements ActionListener{
 	private String TouchIp = "localhost";
 	private int myPost = 5080;
 	private int toPort = 5020;
-	private int receivePort = 5080+1;
 	private File choosefile = null;
 	
 	JSplitPane mainPane;
@@ -455,43 +454,57 @@ public class ChatFrame extends JFrame implements ActionListener{
 							//判断是否为接收指令
 							if(message.equals("#!!!Y***&")){
 								//对方返回接收指令，利用socket发送文件
-								Socket socket = null;
-								System.out.println("收到确认");
-								socket = new Socket(TouchIp,toPort);
-								
-								System.out.println("与服务器连接成功");
-								DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-								DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(choosefile.getAbsolutePath())));
-								
-								int size = 8192;
-								byte[] b = new byte[size];
-								//发送路径测试使用
-								dos.writeUTF(choosefile.getAbsolutePath());
-								dos.flush();
-								System.out.println("文件发送完成\n");
-								//发送文件
-								int read = 0;
-								while(true){
-									
-									if(dis != null){
-										read = dis.read(b);
-									}else{
-										break;
+								//利用线程
+								new Thread(new Runnable(){
+									@Override
+									public void run(){
+										try {
+											Socket socket = null;
+											System.out.println("收到确认");
+											socket = new Socket(TouchIp,toPort);
+											System.out.println("与服务器连接成功");
+											DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+											DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(choosefile.getAbsolutePath())));
+											
+											int size = 8192;
+											byte[] b = new byte[size];
+											//发送路径测试使用
+											dos.writeUTF(choosefile.getAbsolutePath());
+											dos.flush();
+											System.out.println("文件发送完成\n");
+											//发送文件
+											int read = 0;
+											while(true){
+												
+												if(dis != null){
+													read = dis.read(b);
+												}else{
+													break;
+												}
+												
+												if(read == -1){
+													break;
+												}
+												
+												dos.write(b,0,read);
+											}
+											dos.flush();
+											
+											dos.close();
+											dis.close();
+											socket.close();
+											
+											sending = false; //发送状态取消、
+											JOptionPane.showMessageDialog(null, "文件发送完成！", "提示", JOptionPane.WARNING_MESSAGE);
+										} catch (UnknownHostException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										} catch (IOException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
 									}
-									
-									if(read == -1){
-										break;
-									}
-									
-									dos.write(b,0,read);
-								}
-								dos.flush();
-								
-								dos.close();
-								dis.close();
-								socket.close();
-								sending = false; //发送状态取消、
-								JOptionPane.showMessageDialog(null, "文件发送完成！", "提示", JOptionPane.WARNING_MESSAGE);
+								}).start();
 							}else if(message.equals("#!!!N***&")){
 								//拒绝接收指令
 								JOptionPane.showMessageDialog(null, "对方拒绝接收！", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -537,14 +550,10 @@ public class ChatFrame extends JFrame implements ActionListener{
 										continue;
 									}
 									//TODO 
-									
-									
-									receivePort = myPost+1; //监督的端口
 									//开启socketServer接收
 									System.out.println("服务器接收到大接收文件请求，服务器准备开启！");
-									//ServerSocket server = Helper.getUsefulServer(receivePort);
-									ServerSocket server = new ServerSocket(myPost);
-									System.out.println("接收到服务器开启！");
+									
+									
 									//返回接收消息
 									String msgStr = myPost + "#";				
 									msgStr = msgStr + "#!!!Y***&";
@@ -558,74 +567,87 @@ public class ChatFrame extends JFrame implements ActionListener{
 									refuseMail.send(data);
 									refuseMail.close();
 									
-									Socket s = server.accept();
-									
-									DataInputStream dis = new DataInputStream(new BufferedInputStream(s.getInputStream()));
-									int size = 8192;
-									byte[] b = new byte[size];
-									
-									String fileName = dis.readUTF();
-									System.out.println("接收文件：" + fileName);
-									//[start] 自定义文件名称
-									String fileN = null;
-									fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
-									if(fileN == null){
-										String _msgStr = myPost + "#";				
-										_msgStr = _msgStr + "#!!!N***&";
-										byte _refuseMsg[] = msgStr.getBytes();	
-										
-										InetAddress _address = null;
-										_address = InetAddress.getByName(TouchIp);
-											
-										DatagramPacket _data = new DatagramPacket(_refuseMsg,_refuseMsg.length,_address,toPort);
-										DatagramSocket _refuseMail = new DatagramSocket();
-										_refuseMail.send(_data);
-										_refuseMail.close();
-										continue;
-									}
-									while(!Helper.isLegalName(new File(fileName),fileN,saveDir)){
-										fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
-									}
-									String savePath = saveDir.getAbsolutePath() + "\\" + fileN + "." + Helper.getExtension(fileName);
-									File saveFile = new File(savePath);
-									
-									System.out.println("自定义文件名：" + savePath);
-									//[end]
-									/*这个是系统自动生成新名字
-									fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
-									
-									
-									String savePath = saveDir.getAbsolutePath() + "\\" + fileN;
-									//如果已存在其后添加 "_new"
-									File saveFile = new File(savePath);
-									while(saveFile.exists()){
-										savePath = savePath.substring(0,savePath.lastIndexOf(".")) + 
-												"_new" + savePath.substring(savePath.lastIndexOf("."));
-										System.out.println("新路径：" + savePath);
-										saveFile = new File(savePath);
-									}
-									*/
-									System.out.println("开始接收文件\n");
-									DataOutputStream fileOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(saveFile)));
-									while(true){
-										int read = 0;
-										if(dis != null){
-											read = dis.read(b);
-										}else{
-											break;
+									//开始接收文件
+									new Thread(new Runnable(){
+										@Override
+										public void run(){
+											try{
+												ServerSocket server = new ServerSocket(myPost);
+												System.out.println("接收端服务器开启！");
+												Socket s = server.accept();
+												DataInputStream dis = new DataInputStream(new BufferedInputStream(s.getInputStream()));
+												int size = 8192;
+												byte[] b = new byte[size];
+												
+												String fileName = dis.readUTF();
+												System.out.println("接收文件：" + fileName);
+												//[start] 自定义文件名称
+												String fileN = null;
+												fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
+												if(fileN == null){
+													String _msgStr = myPost + "#";				
+													_msgStr = _msgStr + "#!!!N***&";
+													byte _refuseMsg[] = _msgStr.getBytes();	
+													
+													InetAddress _address = null;
+													_address = InetAddress.getByName(TouchIp);
+														
+													DatagramPacket _data = new DatagramPacket(_refuseMsg,_refuseMsg.length,_address,toPort);
+													DatagramSocket _refuseMail = new DatagramSocket();
+													_refuseMail.send(_data);
+													_refuseMail.close();
+													return;
+												}
+												while(!Helper.isLegalName(new File(fileName),fileN,saveDir)){
+													fileN = JOptionPane.showInputDialog(null, "原文件名：" + Helper.getNameWithOutExtension(new File(fileName).getName()) + "\n请输入新文件名！","重命名",JOptionPane.INFORMATION_MESSAGE);
+												}
+												String savePath = saveDir.getAbsolutePath() + "\\" + fileN + "." + Helper.getExtension(fileName);
+												File saveFile = new File(savePath);
+												
+												System.out.println("自定义文件名：" + savePath);
+												//[end]
+												/*这个是系统自动生成新名字
+												fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
+												
+												
+												String savePath = saveDir.getAbsolutePath() + "\\" + fileN;
+												//如果已存在其后添加 "_new"
+												File saveFile = new File(savePath);
+												while(saveFile.exists()){
+													savePath = savePath.substring(0,savePath.lastIndexOf(".")) + 
+															"_new" + savePath.substring(savePath.lastIndexOf("."));
+													System.out.println("新路径：" + savePath);
+													saveFile = new File(savePath);
+												}
+												*/
+												System.out.println("开始接收文件\n");
+												DataOutputStream fileOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(saveFile)));
+												while(true){
+													int read = 0;
+													if(dis != null){
+														read = dis.read(b);
+													}else{
+														break;
+													}
+													if(read == -1){
+														break;
+													}
+													fileOut.write(b,0,read);
+													fileOut.flush();
+												}
+												fileOut.close();
+												s.close();
+												server.close();
+												System.out.println("接收文件完成\n");
+												
+												//接受完成
+												JOptionPane.showMessageDialog(null, "文件接收完成！", "提示", JOptionPane.WARNING_MESSAGE);
+											}catch(Exception err){
+												err.printStackTrace();
+											}
 										}
-										if(read == -1){
-											break;
-										}
-										fileOut.write(b,0,read);
-										fileOut.flush();
-									}
-									fileOut.close();
-									s.close();
-									server.close();
-									System.out.println("接收文件完成\n");
-									//接受完成
-									JOptionPane.showMessageDialog(null, "文件接收完成！", "提示", JOptionPane.WARNING_MESSAGE);
+									}).start();
+									
 						        }else{ 
 						        	//返回拒绝接受
 						        	String msgStr = myPost + "#";				
