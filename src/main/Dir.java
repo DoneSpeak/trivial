@@ -17,15 +17,17 @@ public class Dir {
 		// 指令处理
 		CommandElements cmdE = new CommandElements();
 		ArrayList<SearchObject> searchObj = new ArrayList<SearchObject>();
-/*
+//*/在cmd先使用，此时执行要以java开始如：java Dir D:
 		try {
 			CommandTokenizer.commandTokenizer(args, cmdE, searchObj);
 		} catch (CommandException e) {
 			System.out.println(e.getMessage());
 			return;
 		}
-*/
+//*/
 
+
+/*/TODO 在eclipse下执行，可直接输入指令，此处仍需要修改
 		Scanner reader = new Scanner(System.in);
 		String str[] = new String[2];
 		for (int i = 0; i < 2; i++) {
@@ -37,7 +39,7 @@ public class Dir {
 			System.out.printf(e.getMessage() + "\n");
 			return;
 		}
-		
+/*/
 		// 对每个路径进行处理
 		Iterator<SearchObject> iter = searchObj.iterator();
 		while (iter.hasNext()) {
