@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="gbk" />
-<title>¾©¶«(JD.COM)-×ÛºÏÍø¹ºÊ×Ñ¡-ÕıÆ·µÍ¼Û¡¢Æ·ÖÊ±£ÕÏ¡¢ÅäËÍ¼°Ê±¡¢ÇáËÉ¹ºÎï£¡</title>
+<title>äº¬ä¸œ(JD.COM)-ç»¼åˆç½‘è´­é¦–é€‰-æ­£å“ä½ä»·ã€å“è´¨ä¿éšœã€é…é€åŠæ—¶ã€è½»æ¾è´­ç‰©ï¼</title>
 <link rel="dns-prefetch" href="//misc.360buyimg.com" />  
 <link rel="dns-prefetch" href="//img10.360buyimg.com" />
 <link rel="dns-prefetch" href="//img11.360buyimg.com" />
@@ -13,10 +13,10 @@
 <link rel="dns-prefetch" href="//d.3.cn" />
 <link rel="dns-prefetch" href="//d.jd.com" />
 <link rel="icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico" type="image/x-icon">
-<meta name="description" content="¾©¶«JD.COM-×¨ÒµµÄ×ÛºÏÍøÉÏ¹ºÎïÉÌ³Ç,ÏúÊÛ¼Òµç¡¢ÊıÂëÍ¨Ñ¶¡¢µçÄÔ¡¢¼Ò¾Ó°Ù»õ¡¢·ş×°·şÊÎ¡¢Ä¸Ó¤¡¢Í¼Êé¡¢Ê³Æ·µÈÊıÍò¸öÆ·ÅÆÓÅÖÊÉÌÆ·.±ã½İ¡¢³ÏĞÅµÄ·şÎñ£¬ÎªÄúÌá¹©ÓäÔÃµÄÍøÉÏ¹ºÎïÌåÑé!">
-<meta name="Keywords" content="ÍøÉÏ¹ºÎï,ÍøÉÏÉÌ³Ç,ÊÖ»ú,±Ê¼Ç±¾,µçÄÔ,MP3,CD,VCD,DV,Ïà»ú,ÊıÂë,Åä¼ş,ÊÖ±í,´æ´¢¿¨,¾©¶«">
+<meta name="description" content="äº¬ä¸œJD.COM-ä¸“ä¸šçš„ç»¼åˆç½‘ä¸Šè´­ç‰©å•†åŸ,é”€å”®å®¶ç”µã€æ•°ç é€šè®¯ã€ç”µè„‘ã€å®¶å±…ç™¾è´§ã€æœè£…æœé¥°ã€æ¯å©´ã€å›¾ä¹¦ã€é£Ÿå“ç­‰æ•°ä¸‡ä¸ªå“ç‰Œä¼˜è´¨å•†å“.ä¾¿æ·ã€è¯šä¿¡çš„æœåŠ¡ï¼Œä¸ºæ‚¨æä¾›æ„‰æ‚¦çš„ç½‘ä¸Šè´­ç‰©ä½“éªŒ!">
+<meta name="Keywords" content="ç½‘ä¸Šè´­ç‰©,ç½‘ä¸Šå•†åŸ,æ‰‹æœº,ç¬”è®°æœ¬,ç”µè„‘,MP3,CD,VCD,DV,ç›¸æœº,æ•°ç ,é…ä»¶,æ‰‹è¡¨,å­˜å‚¨å¡,äº¬ä¸œ">
 
-<script type="text/javascript">window.pageConfig = { compatible: true , navId:"jdhome2015" , preload: false , timestamp:1450531101000, surveyLink : '//surveys.jd.com/index.php?r=survey/index/sid/889711/newtest/Y/lang/zh-Hans', surveyTitle : 'µ÷²éÎÊ¾í'}; 
+<script type="text/javascript">window.pageConfig = { compatible: true , navId:"jdhome2015" , preload: false , timestamp:1450531101000, surveyLink : '//surveys.jd.com/index.php?r=survey/index/sid/889711/newtest/Y/lang/zh-Hans', surveyTitle : 'è°ƒæŸ¥é—®å·'}; 
 </script>
 <script type="text/javascript">
 (function(w) {
@@ -129,60 +129,60 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
     	</ul>
     	<ul class="fr">
     	    <li class="fore1" id="ttbar-login" clstag="h|keycount|2015|01b">
-				<a target="_blank" href="javascript:login();" class="link-login">ÄãºÃ£¬ÇëµÇÂ¼</a>&nbsp;&nbsp;<a href="javascript:regist();" class="link-regist style-red">Ãâ·Ñ×¢²á</a>
+				<a target="_blank" href="javascript:login();" class="link-login">ä½ å¥½ï¼Œè¯·ç™»å½•</a>&nbsp;&nbsp;<a href="javascript:regist();" class="link-regist style-red">å…è´¹æ³¨å†Œ</a>
 	    </li>
             <li class="spacer"></li>
 	    <li class="fore2" clstag="h|keycount|2015|01c">
                 <div class="dt">
-                    <a target="_blank" href="//order.jd.com/center/list.action" target="_blank">ÎÒµÄ¶©µ¥</a>
+                    <a target="_blank" href="//order.jd.com/center/list.action" target="_blank">æˆ‘çš„è®¢å•</a>
                 </div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore3 dorpdown" id="ttbar-myjd" clstag="h|keycount|2015|01d">
 	        <div class="dt cw-icon">
-                    <i class="ci-right"><s>¡ó</s></i>
-                    <a target="_blank" href="//home.jd.com/">ÎÒµÄ¾©¶«</a>
+                    <i class="ci-right"><s>â—‡</s></i>
+                    <a target="_blank" href="//home.jd.com/">æˆ‘çš„äº¬ä¸œ</a>
                 </div>
 		<div class="dd dorpdown-layer"></div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore4" clstag="h|keycount|2015|01e">
                 <div class="dt">
-                    <a target="_blank" href="//vip.jd.com/">¾©¶«»áÔ±</a>
+                    <a target="_blank" href="//vip.jd.com/">äº¬ä¸œä¼šå‘˜</a>
                 </div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore5" clstag="h|keycount|2015|01f">
                 <div class="dt">
-                    <a target="_blank" href="//b.jd.com/">ÆóÒµ²É¹º</a>
+                    <a target="_blank" href="//b.jd.com/">ä¼ä¸šé‡‡è´­</a>
                 </div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore6 dorpdown" id="ttbar-apps" clstag="h|keycount|2015|01g">
                 <div class="dt cw-icon">
                     <i class="ci-left"></i>
-		    <i class="ci-right"><s>¡ó</s></i>
-                    <a target="_blank" href="//app.jd.com/">ÊÖ»ú¾©¶«</a>
+		    <i class="ci-right"><s>â—‡</s></i>
+                    <a target="_blank" href="//app.jd.com/">æ‰‹æœºäº¬ä¸œ</a>
                 </div>
             </li>
 		<li class="spacer"></li>
             <li class="fore7 dorpdown" id="ttbar-atte" clstag="h|keycount|2015|01h">
                 <div class="dt cw-icon">
-                    <i class="ci-right"><s>¡ó</s></i>¹Ø×¢¾©¶«
+                    <i class="ci-right"><s>â—‡</s></i>å…³æ³¨äº¬ä¸œ
                 </div>
                 <div class="dd dorpdown-layer"></div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore8 dorpdown" id="ttbar-serv" clstag="h|keycount|2015|01i">
                 <div class="dt cw-icon">
-                    <i class="ci-right"><s>¡ó</s></i>¿Í»§·şÎñ
+                    <i class="ci-right"><s>â—‡</s></i>å®¢æˆ·æœåŠ¡
                 </div>
                 <div class="dd dorpdown-layer"></div>
             </li>
             <li class="spacer"></li>
 	    <li class="fore9 dorpdown" id="ttbar-navs" clstag="h|keycount|2015|01j">
                 <div class="dt cw-icon">
-                    <i class="ci-right"><s>¡ó</s></i>ÍøÕ¾µ¼º½
+                    <i class="ci-right"><s>â—‡</s></i>ç½‘ç«™å¯¼èˆª
                 </div>
                 <div class="dd dorpdown-layer"></div>
             </li>
@@ -192,20 +192,20 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 </div>
 <div class="w">
     <div id="logo-2014" clstag="h|keycount|2015|02a">
-    	<a href="//www.jd.com/" class="logo">¾©¶«</a>
+    	<a href="//www.jd.com/" class="logo">äº¬ä¸œ</a>
     </div>
     <div id="search-2014" >
     	<ul id="shelper" class="hide"></ul>
 		<div class="form">
 			<input clstag="h|keycount|2015|03a" type="text" onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key" accesskey="s" class="text" />
-			<button clstag="h|keycount|2015|03c" onclick="search('key');return false;" class="button cw-icon"><i></i>ËÑË÷</button>
+			<button clstag="h|keycount|2015|03c" onclick="search('key');return false;" class="button cw-icon"><i></i>æœç´¢</button>
 		</div>
     </div>
     <div id="settleup-2014" class="dorpdown" clstag="h|keycount|2015|04a">
 	<div class="cw-icon">
 		<i class="ci-left"></i>
 		<i class="ci-right">&gt;</i>
-		<a target="_blank" href="//cart.jd.com/cart/cart.html">ÎÒµÄ¹ºÎï³µ</a>
+		<a target="_blank" href="//cart.jd.com/cart/cart.html">æˆ‘çš„è´­ç‰©è½¦</a>
 	</div>
 	<div class="dorpdown-layer">
 <div class="spacer"></div>
@@ -224,69 +224,69 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 
     		<div id="categorys-2014" class="dorpdown">
 			<div class="dt" clstag="h|keycount|2015|05a">
-				<a target="_blank" href="http://www.jd.com/allSort.aspx">È«²¿ÉÌÆ··ÖÀà</a>
+				<a target="_blank" href="http://www.jd.com/allSort.aspx">å…¨éƒ¨å•†å“åˆ†ç±»</a>
 			</div>
 			<div class="dd">
 				<div class="dd-inner">
 					
 					<div class="item fore1" data-index="1" clstag="h|keycount|2015|0501a">
-						<h3><a target="_blank" href="http://channel.jd.com/electronic.html">¼ÒÓÃµçÆ÷</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/electronic.html">å®¶ç”¨ç”µå™¨</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore2" data-index="2" clstag="h|keycount|2015|0502a">
-						<h3><a target="_blank" href="http://shouji.jd.com/">ÊÖ»ú</a>¡¢<a target="_blank" href="http://shuma.jd.com/">ÊıÂë</a>¡¢<a target="_blank" href="http://mobile.jd.com/">¾©¶«Í¨ĞÅ</a></h3>
+						<h3><a target="_blank" href="http://shouji.jd.com/">æ‰‹æœº</a>ã€<a target="_blank" href="http://shuma.jd.com/">æ•°ç </a>ã€<a target="_blank" href="http://mobile.jd.com/">äº¬ä¸œé€šä¿¡</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore3" data-index="3" clstag="h|keycount|2015|0503a">
-						<h3><a target="_blank" href="http://diannao.jd.com/">µçÄÔ¡¢°ì¹«</a></h3>
+						<h3><a target="_blank" href="http://diannao.jd.com/">ç”µè„‘ã€åŠå…¬</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore4" data-index="4" clstag="h|keycount|2015|0504a">
-						<h3><a target="_blank" href="http://channel.jd.com/home.html">¼Ò¾Ó</a>¡¢<a target="_blank" href="http://channel.jd.com/furniture.html">¼Ò¾ß</a>¡¢<a target="_blank" href="http://channel.jd.com/decoration.html">¼Ò×°</a>¡¢<a target="_blank" href="http://channel.jd.com/kitchenware.html">³ø¾ß</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/home.html">å®¶å±…</a>ã€<a target="_blank" href="http://channel.jd.com/furniture.html">å®¶å…·</a>ã€<a target="_blank" href="http://channel.jd.com/decoration.html">å®¶è£…</a>ã€<a target="_blank" href="http://channel.jd.com/kitchenware.html">å¨å…·</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore5" data-index="5" clstag="h|keycount|2015|0505a">
-						<h3><a target="_blank" href="http://channel.jd.com/1315-1342.html">ÄĞ×°</a>¡¢<a target="_blank" href="http://channel.jd.com/1315-1343.html">Å®×°</a>¡¢<a target="_blank" href="http://channel.jd.com/1315-1345.html">ÄÚÒÂ</a>¡¢<a target="_blank" href="http://channel.jd.com/jewellery.html">Öé±¦</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/1315-1342.html">ç”·è£…</a>ã€<a target="_blank" href="http://channel.jd.com/1315-1343.html">å¥³è£…</a>ã€<a target="_blank" href="http://channel.jd.com/1315-1345.html">å†…è¡£</a>ã€<a target="_blank" href="http://channel.jd.com/jewellery.html">ç å®</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore6" data-index="6" clstag="h|keycount|2015|0506a">
-						<h3><a target="_blank" href="http://channel.jd.com/beauty.html">¸ö»¤»¯×±</a>¡¢<a target="_blank" href="http://channel.jd.com/1620-1625.html">Çå½àÓÃÆ·</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/beauty.html">ä¸ªæŠ¤åŒ–å¦†</a>ã€<a target="_blank" href="http://channel.jd.com/1620-1625.html">æ¸…æ´ç”¨å“</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore7" data-index="7" clstag="h|keycount|2015|0507a">
-						<h3><a target="_blank" href="http://channel.jd.com/shoes.html">Ğ¬Ñ¥</a>¡¢<a target="_blank" href="http://channel.jd.com/bag.html">Ïä°ü</a>¡¢<a target="_blank" href="http://channel.jd.com/watch.html">ÖÓ±í</a>¡¢<a target="_blank" href="http://channel.jd.com/1672-2615.html">Éİ³ŞÆ·</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/shoes.html">é‹é´</a>ã€<a target="_blank" href="http://channel.jd.com/bag.html">ç®±åŒ…</a>ã€<a target="_blank" href="http://channel.jd.com/watch.html">é’Ÿè¡¨</a>ã€<a target="_blank" href="http://channel.jd.com/1672-2615.html">å¥¢ä¾ˆå“</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore8" data-index="8" clstag="h|keycount|2015|0508a">
-						<h3><a target="_blank" href="http://channel.jd.com/sports.html">ÔË¶¯»§Íâ</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/sports.html">è¿åŠ¨æˆ·å¤–</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore9" data-index="9" clstag="h|keycount|2015|0509a">
-						<h3><a target="_blank" href="http://car.jd.com/">Æû³µ</a>¡¢<a target="_blank" href="http://channel.jd.com/auto.html">Æû³µÓÃÆ·</a></h3>
+						<h3><a target="_blank" href="http://car.jd.com/">æ±½è½¦</a>ã€<a target="_blank" href="http://channel.jd.com/auto.html">æ±½è½¦ç”¨å“</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore10" data-index="10" clstag="h|keycount|2015|0510a">
-						<h3><a target="_blank" href="http://baby.jd.com">Ä¸Ó¤</a>¡¢<a target="_blank" href="http://channel.jd.com/toys.html">Íæ¾ßÀÖÆ÷</a></h3>
+						<h3><a target="_blank" href="http://baby.jd.com">æ¯å©´</a>ã€<a target="_blank" href="http://channel.jd.com/toys.html">ç©å…·ä¹å™¨</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore11" data-index="11" clstag="h|keycount|2015|0511a">
-						<h3><a target="_blank" href="http://channel.jd.com/food.html">Ê³Æ·</a>¡¢<a target="_blank" href="http://channel.jd.com/wine.html">¾ÆÀà</a>¡¢<a target="_blank" href="http://channel.jd.com/freshfood.html">ÉúÏÊ</a>¡¢<a target="_blank" href="http://china.jd.com">ÌØ²ú</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/food.html">é£Ÿå“</a>ã€<a target="_blank" href="http://channel.jd.com/wine.html">é…’ç±»</a>ã€<a target="_blank" href="http://channel.jd.com/freshfood.html">ç”Ÿé²œ</a>ã€<a target="_blank" href="http://china.jd.com">ç‰¹äº§</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore12" data-index="12" clstag="h|keycount|2015|0512a">
-						<h3><a target="_blank" href="http://channel.jd.com/health.html">ÓªÑø±£½¡</a></h3>
+						<h3><a target="_blank" href="http://channel.jd.com/health.html">è¥å…»ä¿å¥</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore13" data-index="13" clstag="h|keycount|2015|0513a">
-						<h3><a target="_blank" href="http://book.jd.com/">Í¼Êé</a>¡¢<a target="_blank" href="http://mvd.jd.com/">ÒôÏñ</a>¡¢<a target="_blank" href="http://e.jd.com/ebook.html">µç×ÓÊé</a></h3>
+						<h3><a target="_blank" href="http://book.jd.com/">å›¾ä¹¦</a>ã€<a target="_blank" href="http://mvd.jd.com/">éŸ³åƒ</a>ã€<a target="_blank" href="http://e.jd.com/ebook.html">ç”µå­ä¹¦</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore14" data-index="14" clstag="h|keycount|2015|0514a">
-						<h3><a target="_blank" href="http://caipiao.jd.com/">²ÊÆ±</a>¡¢<a target="_blank" href="http://trip.jd.com/">ÂÃĞĞ</a>¡¢<a target="_blank" href="http://chongzhi.jd.com/">³äÖµ</a>¡¢<a target="_blank" href="http://piao.jd.com/">Æ±Îñ</a></h3>
+						<h3><a target="_blank" href="http://caipiao.jd.com/">å½©ç¥¨</a>ã€<a target="_blank" href="http://trip.jd.com/">æ—…è¡Œ</a>ã€<a target="_blank" href="http://chongzhi.jd.com/">å……å€¼</a>ã€<a target="_blank" href="http://piao.jd.com/">ç¥¨åŠ¡</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 					<div class="item fore15" data-index="15" clstag="h|keycount|2015|0515a">
-						<h3><a target="_blank" href="http://licai.jd.com/">Àí²Æ</a>¡¢<a target="_blank" href="http://z.jd.com/">ÖÚ³ï</a>¡¢<a target="_blank" href="http://baitiao.jd.com">°×Ìõ</a>¡¢<a target="_blank" href="http://bao.jd.com/">±£ÏÕ</a></h3>
+						<h3><a target="_blank" href="http://licai.jd.com/">ç†è´¢</a>ã€<a target="_blank" href="http://z.jd.com/">ä¼—ç­¹</a>ã€<a target="_blank" href="http://baitiao.jd.com">ç™½æ¡</a>ã€<a target="_blank" href="http://bao.jd.com/">ä¿é™©</a></h3>
 				   		<i>&gt;</i> 
 				   	</div>
 				</div>
@@ -296,31 +296,31 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 		
 		<ul id="navitems-group1">
 			<li clstag="h|keycount|2015|06a" id="nav-fashion" class="fore1" >
-				<a target="_blank" href="http://channel.jd.com/fashion.html">·ş×°³Ç</a>
+				<a target="_blank" href="http://channel.jd.com/fashion.html">æœè£…åŸ</a>
 			</li>
 			<li clstag="h|keycount|2015|06b" id="nav-beauty" class="fore2" >
-				<a target="_blank" href="http://channel.jd.com/beautysale.html">ÃÀ×±¹İ</a>
+				<a target="_blank" href="http://channel.jd.com/beautysale.html">ç¾å¦†é¦†</a>
 			</li>
 			<li clstag="h|keycount|2015|06c" id="nav-chaoshi" class="fore3" >
-				<a target="_blank" href="http://channel.jd.com/chaoshi.html">³¬ÊĞ</a>
+				<a target="_blank" href="http://channel.jd.com/chaoshi.html">è¶…å¸‚</a>
 			</li>
 			<li clstag="h|keycount|2015|06d" id="nav-jdww" class="fore4" >
-				<a target="_blank" href="http://www.jd.hk/">È«Çò¹º</a>
+				<a target="_blank" href="http://www.jd.hk/">å…¨çƒè´­</a>
 			</li>
 		</ul>
 		<div class="spacer"></div>
 		<ul id="navitems-group2">
 			<li clstag="h|keycount|2015|06e" id="nav-red" class="fore1" >
-				<a target="_blank" href="http://red.jd.com/">ÉÁ¹º</a>
+				<a target="_blank" href="http://red.jd.com/">é—ªè´­</a>
 			</li>
 			<li clstag="h|keycount|2015|06f" id="nav-tuan" class="fore2" >
-				<a target="_blank" href="http://tuan.jd.com/">ÍÅ¹º</a>
+				<a target="_blank" href="http://tuan.jd.com/">å›¢è´­</a>
 			</li>
 			<li clstag="h|keycount|2015|06g" id="nav-auction" class="fore3" >
-				<a target="_blank" href="http://paimai.jd.com/">ÅÄÂô</a>
+				<a target="_blank" href="http://paimai.jd.com/">æ‹å–</a>
 			</li>
 			<li clstag="h|keycount|2015|06h" id="nav-jr" class="fore4" >
-				<a target="_blank" href="http://jr.jd.com/">½ğÈÚ</a>
+				<a target="_blank" href="http://jr.jd.com/">é‡‘è</a>
 			</li>
 		</ul>
     </div><!--index_ok-->
@@ -349,23 +349,23 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 
         <div id="news" class="m">
         <div class="mt">
-            <h2>¾©¶«¿ì±¨</h2>
-            <div class="extra"><a target="_blank" href="http://www.jd.com/moreSubject.aspx" clstag="h|keycount|2015|09a">¸ü¶à &gt;</a></div>
+            <h2>äº¬ä¸œå¿«æŠ¥</h2>
+            <div class="extra"><a target="_blank" href="http://www.jd.com/moreSubject.aspx" clstag="h|keycount|2015|09a">æ›´å¤š &gt;</a></div>
         </div>
         <div class="mc">
         <ul>
             
-                    <li clstag="h|keycount|2015|09b1"><a target="_blank" href="http://sale.jd.com/act/wAQPT4tNpFC0qbEl.html"><span>[ÌØ»İ]</span>·ş×°Ê¥µ®¿ñ»¶ µÍÖÁ88Ôª</a></li>
-                    <li clstag="h|keycount|2015|09b2"><a target="_blank" href="http://www.jd.com/news.aspx?id=26950"><span>[¹«¸æ]</span>×Ô¹±´ó¼şÔËÓªÖĞĞÄÕıÊ½Í¶ÈëÔËÓª</a></li>
-                    <li clstag="h|keycount|2015|09b3"><a target="_blank" href="http://sale.jd.com/act/fnR1mb0S6YJ.html"><span>[ÌØ»İ]</span>ÎäººÍøÂç¹ºÎï½ÚÈÈ¸ÉÃæ1ÔªÃë</a></li>
-                    <li clstag="h|keycount|2015|09b4"><a target="_blank" href="http://www.jd.com/news.aspx?id=26942"><span>[¹«¸æ]</span>ÁõÇ¿¶«ÏòÏ°Ö÷Ï¯½éÉÜÖÇÄÜÎïÁ÷</a></li>
-                    <li clstag="h|keycount|2015|09b5"><a target="_blank" href="http://sale.jd.com/act/0Rmr4K85Wi3J.html"><span>[ÌØ»İ]</span>Îíö²·À»¤£¬ºôÎü½¡¿µÉú»î</a></li>
+                    <li clstag="h|keycount|2015|09b1"><a target="_blank" href="http://sale.jd.com/act/wAQPT4tNpFC0qbEl.html"><span>[ç‰¹æƒ ]</span>æœè£…åœ£è¯ç‹‚æ¬¢ ä½è‡³88å…ƒ</a></li>
+                    <li clstag="h|keycount|2015|09b2"><a target="_blank" href="http://www.jd.com/news.aspx?id=26950"><span>[å…¬å‘Š]</span>è‡ªè´¡å¤§ä»¶è¿è¥ä¸­å¿ƒæ­£å¼æŠ•å…¥è¿è¥</a></li>
+                    <li clstag="h|keycount|2015|09b3"><a target="_blank" href="http://sale.jd.com/act/fnR1mb0S6YJ.html"><span>[ç‰¹æƒ ]</span>æ­¦æ±‰ç½‘ç»œè´­ç‰©èŠ‚çƒ­å¹²é¢1å…ƒç§’</a></li>
+                    <li clstag="h|keycount|2015|09b4"><a target="_blank" href="http://www.jd.com/news.aspx?id=26942"><span>[å…¬å‘Š]</span>åˆ˜å¼ºä¸œå‘ä¹ ä¸»å¸­ä»‹ç»æ™ºèƒ½ç‰©æµ</a></li>
+                    <li clstag="h|keycount|2015|09b5"><a target="_blank" href="http://sale.jd.com/act/0Rmr4K85Wi3J.html"><span>[ç‰¹æƒ ]</span>é›¾éœ¾é˜²æŠ¤ï¼Œå‘¼å¸å¥åº·ç”Ÿæ´»</a></li>
         </ul>
         </div>
     </div><!--index_ok-->
     <div id="lifeserv" class="m">
     <div class="mt">
-        <h2>Éú»î·şÎñ</h2>
+        <h2>ç”Ÿæ´»æœåŠ¡</h2>
         <div class="extra"></div>
     </div>
     <div class="mc">
@@ -373,69 +373,69 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 				
 			<li class="fore1" data-iframe="//chongzhi.jd.com/jd-index-ifame.htm" clstag="h|keycount|2015|10b01">
 				<a class="cw-icon" target="_blank" href="http://chongzhi.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>»°·Ñ</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>è¯è´¹</span>
 				</a>
 			</li>	
 			<li class="fore2" data-iframe="//jipiao.jd.com/htm/iframeTrip.html" clstag="h|keycount|2015|10b02">
 				<a class="cw-icon" target="_blank" href="http://jipiao.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>»úÆ±</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>æœºç¥¨</span>
 				</a>
 			</li>	
 			<li class="fore3" data-iframe="//movie.jd.com/jdmovie.html" clstag="h|keycount|2015|10b03">
 				<a class="cw-icon" target="_blank" href="http://movie.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>µçÓ°Æ±</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ç”µå½±ç¥¨</span>
 				</a>
 			</li>	
 			<li class="fore4" data-iframe="//card.jd.com/html/card-jdIndex2015.html" clstag="h|keycount|2015|10b04">
 				<a class="cw-icon" target="_blank" href="http://game.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ÓÎÏ·</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>æ¸¸æˆ</span>
 				</a>
 			</li>	
 			<li class="fore5" clstag="h|keycount|2015|10b05">
 				<a class="cw-icon" target="_blank" href="http://caipiao.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>²ÊÆ±</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>å½©ç¥¨</span>
 				</a>
 			</li>	
 			<li class="fore6" clstag="h|keycount|2015|10b06">
 				<a class="cw-icon" target="_blank" href="http://tuan.jd.com/homevirtual-beijing.html?cpdad=1DLSUE">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ÍÅ¹º</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>å›¢è´­</span>
 				</a>
 			</li>	
 			<li class="fore7" clstag="h|keycount|2015|10b07">
 				<a class="cw-icon" target="_blank" href="http://hotel.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>¾Æµê</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>é…’åº—</span>
 					<i class="ci-tip" style="width:12px;height:15px;top:0px;right:0px;background: url(//img12.360buyimg.com/da/jfs/t2332/40/253298210/1032/55bc7991/55fa838bNd53c791c.png);_background: url(//img11.360buyimg.com/da/jfs/t1777/221/1595870691/1018/dfa81ce9/55fa8394N32470916.png); no-repeat scroll 0 0"></i>
 				</a>
 			</li>	
 			<li class="fore8" clstag="h|keycount|2015|10b08">
 				<a class="cw-icon" target="_blank" href="http://jiaofei.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>Ë®µçÃº</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>æ°´ç”µç…¤</span>
 				</a>
 			</li>	
 			<li class="fore11" clstag="h|keycount|2015|10b11">
 				<a class="cw-icon" target="_blank" href="http://z.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ÖÚ³ï</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ä¼—ç­¹</span>
 				</a>
 			</li>	
 			<li class="fore9" clstag="h|keycount|2015|10b09">
 				<a class="cw-icon" target="_blank" href="http://licai.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>Àí²Æ</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ç†è´¢</span>
 				</a>
 			</li>	
 			<li class="fore12" clstag="h|keycount|2015|10b12">
 				<a class="cw-icon" target="_blank" href="http://giftcard.jd.com/market/index.action">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ÀñÆ·¿¨</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ç¤¼å“å¡</span>
 				</a>
 			</li>	
 			<li class="fore10" clstag="h|keycount|2015|10b10">
 				<a class="cw-icon" target="_blank" href="http://baitiao.jd.com/">
-					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>°×Ìõ</span>
+					<i class="ci-left" style="background-image: url(//img14.360buyimg.com/da/jfs/t1456/28/1208095754/7218/651e2541/55bf27beN7565bc0e.png);_background-image: url(//img14.360buyimg.com/da/jfs/t1396/62/1212384285/4632/c314ab35/55bf27d6N9a8eae98.png);"></i><span>ç™½æ¡</span>
 					<i class="ci-tip" style="width:12px;height:15px;top:0px;right:3px;background: url(//img12.360buyimg.com/da/jfs/t1885/109/259148734/1042/7612478/55fa83f3Nffe03c26.png);_background: url(//img12.360buyimg.com/da/jfs/t2479/195/248579637/1023/8f67a59e/55fa83fbN491365eb.png); no-repeat scroll 0 0"></i>
 				</a>
 			</li>
 		</ul>
 		<div class="mc-inner hide">
-			<a class="close">¡Á</a>
+			<a class="close">Ã—</a>
 			<div class="hide"></div>
 			<div class="hide"></div>
 			<div class="hide"></div>
@@ -454,20 +454,20 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 </div>
 <div class="lazy-fn-wrap clearfix" data-space="2">
 	<div class="floor-banner-body lazy-fn" id="lazy-floor-banner-1"  data-path="floor1-floor_banner.js" data-time="90698403c8726c3b5e2566b3aee151d4"></div>
-	<div class="w floor lazy-fn" data-title="·şÊÎ" id="lazy-clothes" data-path="floor1-floor_index.js" data-time="a6556ba24d1233d250d8941a167805c4"></div>
-	<div class="w floor lazy-fn" data-title="ÃÀ×±" id="lazy-cosmetics" data-path="floor2-floor_index.js" data-time="4b2b1cd5c29e65bd4058f0eb3cf1fff1"></div>
+	<div class="w floor lazy-fn" data-title="æœé¥°" id="lazy-clothes" data-path="floor1-floor_index.js" data-time="a6556ba24d1233d250d8941a167805c4"></div>
+	<div class="w floor lazy-fn" data-title="ç¾å¦†" id="lazy-cosmetics" data-path="floor2-floor_index.js" data-time="4b2b1cd5c29e65bd4058f0eb3cf1fff1"></div>
 	<div class="floor-banner-body lazy-fn" id="lazy-floor-banner-2"  data-path="floor3-floor_banner.js" data-time="848af2bd11b05bc0b42afb478b637d41"></div>
-	<div class="w floor lazy-fn" data-title="ÊÖ»ú" id="lazy-mobiles" data-path="floor5-floor_index.js" data-time="cd26e3419c6d3f41e24931805536a1a0"></div>
-	<div class="w floor lazy-fn" data-title="¼Òµç" id="lazy-electronics" data-path="floor3-floor_index.js" data-time="1c02bb60615ac55e34c1b54741cef51b"> </div>
-	<div class="w floor lazy-fn" data-title="ÊıÂë" id="lazy-digitals" data-path="floor4-floor_index.js" data-time="c0d067c65ae640b84f440a6bea06763e"></div>
+	<div class="w floor lazy-fn" data-title="æ‰‹æœº" id="lazy-mobiles" data-path="floor5-floor_index.js" data-time="cd26e3419c6d3f41e24931805536a1a0"></div>
+	<div class="w floor lazy-fn" data-title="å®¶ç”µ" id="lazy-electronics" data-path="floor3-floor_index.js" data-time="1c02bb60615ac55e34c1b54741cef51b"> </div>
+	<div class="w floor lazy-fn" data-title="æ•°ç " id="lazy-digitals" data-path="floor4-floor_index.js" data-time="c0d067c65ae640b84f440a6bea06763e"></div>
 	<div class="floor-banner-body lazy-fn" id="lazy-floor-banner-3"  data-path="floor6-floor_banner.js" data-time="792a44e217e5c30874c853e9398e140b"> </div>
-	<div class="w floor lazy-fn" data-title="ÔË¶¯" id="lazy-sports" data-path="floor6-floor_index.js" data-time="634b9083de105866c0a4ce21a72d142b"></div>
-	<div class="w floor lazy-fn" data-title="¾Ó¼Ò" id="lazy-livings" data-path="floor7-floor_index.js" data-time="9c7234baf21d2aa3fd56388aa45d2066"></div>
-	<div class="w floor lazy-fn" data-title="Ä¸Ó¤" id="lazy-babys" data-path="floor8-floor_index.js" data-time="cbbb83a450d613f4d7155c6a169740e2"></div>
-	<div class="w floor lazy-fn" data-title="Ê³Æ·" id="lazy-foods" data-path="floor9-floor_index.js" data-time="c3c50bb27fc24fe4569a796ec762de24"></div>
+	<div class="w floor lazy-fn" data-title="è¿åŠ¨" id="lazy-sports" data-path="floor6-floor_index.js" data-time="634b9083de105866c0a4ce21a72d142b"></div>
+	<div class="w floor lazy-fn" data-title="å±…å®¶" id="lazy-livings" data-path="floor7-floor_index.js" data-time="9c7234baf21d2aa3fd56388aa45d2066"></div>
+	<div class="w floor lazy-fn" data-title="æ¯å©´" id="lazy-babys" data-path="floor8-floor_index.js" data-time="cbbb83a450d613f4d7155c6a169740e2"></div>
+	<div class="w floor lazy-fn" data-title="é£Ÿå“" id="lazy-foods" data-path="floor9-floor_index.js" data-time="c3c50bb27fc24fe4569a796ec762de24"></div>
 	<div class="floor-banner-body lazy-fn" id="lazy-floor-banner-4" data-path="floor10-floor_banner.js" data-time="1e3a381b09edb9d39326166b8a5ed721" ></div> 
-	<div class="w floor lazy-fn" data-title="Í¼Êé" id="lazy-books" data-path="floor10-floor_index.js" data-time="1d72342133231ba9353ce07ebbc259b9"></div> 
-	<div class="w floor lazy-fn" data-title="·şÎñ" id="lazy-life" data-path="floor11-floor_index.js" data-time="e663a955413a3a55caba031cf2d067d6"></div> 
+	<div class="w floor lazy-fn" data-title="å›¾ä¹¦" id="lazy-books" data-path="floor10-floor_index.js" data-time="1d72342133231ba9353ce07ebbc259b9"></div> 
+	<div class="w floor lazy-fn" data-title="æœåŠ¡" id="lazy-life" data-path="floor11-floor_index.js" data-time="e663a955413a3a55caba031cf2d067d6"></div> 
 	<div class="w clearfix lazy-fn" id="lazy-special" data-path="special-special.js" data-time="f9d35ef8cffbf39ee344d6a73d013013"></div>
 	<div class="lazy-fn" id="lazy-footer" data-path-js="product/home/1.0.0/widget/home-footer/home-footer.js"></div>
 </div><!--index_ok-->
@@ -476,7 +476,7 @@ if(!function(a,b){function c(a){return function(b){return{}.toString.call(b)=="[
 <script type="text/javascript" src="//misc.360buyimg.com/product/home/1.0.0/js/init.js"></script>
 <script type="text/javascript" src="//wl.jd.com/wl.js"></script>
 <script type="text/javascript">
-!function(a,b){function c(){var a=b("#J-banner-top"),c=b("#J-banner-close"),d=b("#J-openapp"),f='openApp.jdiPad://CPS?params={"category":"jump","des":"Home","SourceType":"PC"}';c[0].addEventListener("click",function(){l.set(p,"false",{expires:3}),a.animate({height:0},"fast")},!1),d[0].addEventListener("click",function(){e(f);try{var a="MPCHomeMain_OpenApp",b=new MPing.inputs.Click(a);b.updateEventSeries();var c=new MPing;c.send(b)}catch(d){}},!1)}function d(){var a='<div id="J-banner-top" class="banner-top">';a+='<a class="link">',a+='   <img src="//img12.360buyimg.com/da/jfs/t1150/27/693141209/10948/be228f20/553de1fcNc9986b77.png" class="logo" width="50" height="50">',a+='       <span class="top-info">ÉÏiPad¿Í»§¶Ë Ê×µ¥Âú79ËÍ79Ôª£¬¸üÓĞÎŞÏß×¨ÏíÉÌÆ·ÌìÌìÃëÉ±£¡</span>',a+='       <span id="J-openapp" class="btn">Á¢¼´´ò¿ª</span>',a+="    </a>",a+='   <a href="javascript:;" id="J-banner-close" class="close">X</a>',a+="</div>";var c=["*{margin:0;padding:0;}",'.banner-top {position:relative; height: 80px;background-color: #44444E; font-family: "Helvetica Neue", Helvetica, DroidSansFallback, HeiTi SC, Arial, sans-serif; overflow: hidden;width:990px;}',".banner-top .link{display:block; padding-left: 54px;padding-right:64px; overflow: hidden;}",".banner-top .logo{float: left; margin-top: 15px;}",".banner-top .top-info{float: left; margin-top: 28px; padding-left: 20px; color: #FFF; font-size: 16px;}",".banner-top .btn{float: right; padding: 8px 30px; margin-top: 25px; border-radius: 5px; background-color: #FFF; font-size: 14px; color: #333;}",".banner-top .close{position: absolute; right: 10px; top: 10px; width: 20px;height: 20px;border-radius: 10px;background-color: #2E2E35; color: #D5D5D6; line-height: 22px;text-decoration: none !important; text-align: center;font-family: Arial; font-size: 12px;}"].join("");b("<style></style>").html(c).appendTo(b("head")),b("body").prepend(b(a));try{var d="MPCHomeMain_OpenApp_Expo",e=new MPing.inputs.Click(d);e.updateEventSeries();var f=new MPing;f.send(e)}catch(g){}}function e(a){var b,c="https://itunes.apple.com/cn/app/jing-dong-hd/id434374726";o||(o=document.createElement("iframe"),o.style.display="none",o.style.height="0",o.style.width="0",document.body.appendChild(o)),o.src=a,b=setTimeout(function(){location=c},100)}function f(a,b){var c,d,e,f=document.head||document.getElementsByTagName("head")[0]||document.documentElement;"object"==typeof a&&(d=a,a=void 0),e=d||{},a=a||e.url,b=b||e.success,c=document.createElement("script"),c.async=e.async||!1,c.type="text/javascript",e.charset&&(c.charset=e.charset),e.cache===!1&&(a=a+(/\?/.test(a)?"&":"?")+"_="+(new Date).getTime()),c.src=a,f.insertBefore(c,f.firstChild),b&&(document.addEventListener?c.addEventListener("load",b,!1):c.onreadystatechange=function(){/loaded|complete/.test(c.readyState)&&(c.onreadystatechange=null,b())})}function g(a,b){var c={};if(h(a)&&a.length>0)for(var d,e,f,g=b?m:k,i=a.split(/;\s/g),j=0,l=i.length;l>j;j++){if(f=i[j].match(/([^=]+)=/i),f instanceof Array)try{d=m(f[1]),e=g(i[j].substring(f[1].length+1))}catch(n){}else d=m(i[j]),e="";d&&(c[d]=e)}return c}function h(a){return"string"==typeof a}function i(a){return h(a)&&""!==a}function j(a){if(!i(a))throw new TypeError("Cookie name must be a non-empty string")}function k(a){return a}var l={},m=decodeURIComponent,n=encodeURIComponent;l.get=function(a,b){j(a),b="function"==typeof b?{converter:b}:b||{};var c=g(document.cookie,!b.raw);return(b.converter||k)(c[a])},l.set=function(a,b,c){j(a),c=c||{};var d=c.expires,e=c.domain,f=c.path;c.raw||(b=n(String(b)));var g=a+"="+b,h=d;return"number"==typeof h&&(h=new Date,h.setDate(h.getDate()+d)),h instanceof Date&&(g+="; expires="+h.toUTCString()),i(e)&&(g+="; domain="+e),i(f)&&(g+="; path="+f),c.secure&&(g+="; secure"),document.cookie=g,g},l.remove=function(a,b){return b=b||{},b.expires=new Date(0),this.set(a,"",b)};var o,p="showIPadTop",q=navigator.userAgent.toLowerCase(),r=function(){var a=/iPad/i;return a.test(q)}(),s=l.get(p);return r&&"false"!==s?void f({url:"//h5.m.jd.com/active/track/mping.min.js",async:"async"},function(){d(),c()}):!1}(window,jQuery);
+!function(a,b){function c(){var a=b("#J-banner-top"),c=b("#J-banner-close"),d=b("#J-openapp"),f='openApp.jdiPad://CPS?params={"category":"jump","des":"Home","SourceType":"PC"}';c[0].addEventListener("click",function(){l.set(p,"false",{expires:3}),a.animate({height:0},"fast")},!1),d[0].addEventListener("click",function(){e(f);try{var a="MPCHomeMain_OpenApp",b=new MPing.inputs.Click(a);b.updateEventSeries();var c=new MPing;c.send(b)}catch(d){}},!1)}function d(){var a='<div id="J-banner-top" class="banner-top">';a+='<a class="link">',a+='   <img src="//img12.360buyimg.com/da/jfs/t1150/27/693141209/10948/be228f20/553de1fcNc9986b77.png" class="logo" width="50" height="50">',a+='       <span class="top-info">ä¸ŠiPadå®¢æˆ·ç«¯ é¦–å•æ»¡79é€79å…ƒï¼Œæ›´æœ‰æ— çº¿ä¸“äº«å•†å“å¤©å¤©ç§’æ€ï¼</span>',a+='       <span id="J-openapp" class="btn">ç«‹å³æ‰“å¼€</span>',a+="    </a>",a+='   <a href="javascript:;" id="J-banner-close" class="close">X</a>',a+="</div>";var c=["*{margin:0;padding:0;}",'.banner-top {position:relative; height: 80px;background-color: #44444E; font-family: "Helvetica Neue", Helvetica, DroidSansFallback, HeiTi SC, Arial, sans-serif; overflow: hidden;width:990px;}',".banner-top .link{display:block; padding-left: 54px;padding-right:64px; overflow: hidden;}",".banner-top .logo{float: left; margin-top: 15px;}",".banner-top .top-info{float: left; margin-top: 28px; padding-left: 20px; color: #FFF; font-size: 16px;}",".banner-top .btn{float: right; padding: 8px 30px; margin-top: 25px; border-radius: 5px; background-color: #FFF; font-size: 14px; color: #333;}",".banner-top .close{position: absolute; right: 10px; top: 10px; width: 20px;height: 20px;border-radius: 10px;background-color: #2E2E35; color: #D5D5D6; line-height: 22px;text-decoration: none !important; text-align: center;font-family: Arial; font-size: 12px;}"].join("");b("<style></style>").html(c).appendTo(b("head")),b("body").prepend(b(a));try{var d="MPCHomeMain_OpenApp_Expo",e=new MPing.inputs.Click(d);e.updateEventSeries();var f=new MPing;f.send(e)}catch(g){}}function e(a){var b,c="https://itunes.apple.com/cn/app/jing-dong-hd/id434374726";o||(o=document.createElement("iframe"),o.style.display="none",o.style.height="0",o.style.width="0",document.body.appendChild(o)),o.src=a,b=setTimeout(function(){location=c},100)}function f(a,b){var c,d,e,f=document.head||document.getElementsByTagName("head")[0]||document.documentElement;"object"==typeof a&&(d=a,a=void 0),e=d||{},a=a||e.url,b=b||e.success,c=document.createElement("script"),c.async=e.async||!1,c.type="text/javascript",e.charset&&(c.charset=e.charset),e.cache===!1&&(a=a+(/\?/.test(a)?"&":"?")+"_="+(new Date).getTime()),c.src=a,f.insertBefore(c,f.firstChild),b&&(document.addEventListener?c.addEventListener("load",b,!1):c.onreadystatechange=function(){/loaded|complete/.test(c.readyState)&&(c.onreadystatechange=null,b())})}function g(a,b){var c={};if(h(a)&&a.length>0)for(var d,e,f,g=b?m:k,i=a.split(/;\s/g),j=0,l=i.length;l>j;j++){if(f=i[j].match(/([^=]+)=/i),f instanceof Array)try{d=m(f[1]),e=g(i[j].substring(f[1].length+1))}catch(n){}else d=m(i[j]),e="";d&&(c[d]=e)}return c}function h(a){return"string"==typeof a}function i(a){return h(a)&&""!==a}function j(a){if(!i(a))throw new TypeError("Cookie name must be a non-empty string")}function k(a){return a}var l={},m=decodeURIComponent,n=encodeURIComponent;l.get=function(a,b){j(a),b="function"==typeof b?{converter:b}:b||{};var c=g(document.cookie,!b.raw);return(b.converter||k)(c[a])},l.set=function(a,b,c){j(a),c=c||{};var d=c.expires,e=c.domain,f=c.path;c.raw||(b=n(String(b)));var g=a+"="+b,h=d;return"number"==typeof h&&(h=new Date,h.setDate(h.getDate()+d)),h instanceof Date&&(g+="; expires="+h.toUTCString()),i(e)&&(g+="; domain="+e),i(f)&&(g+="; path="+f),c.secure&&(g+="; secure"),document.cookie=g,g},l.remove=function(a,b){return b=b||{},b.expires=new Date(0),this.set(a,"",b)};var o,p="showIPadTop",q=navigator.userAgent.toLowerCase(),r=function(){var a=/iPad/i;return a.test(q)}(),s=l.get(p);return r&&"false"!==s?void f({url:"//h5.m.jd.com/active/track/mping.min.js",async:"async"},function(){d(),c()}):!1}(window,jQuery);
 </script>
 
     <script type="text/javascript">

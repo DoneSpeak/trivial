@@ -18,10 +18,10 @@ import javax.swing.JOptionPane;
 
 import Helper.Helper;
 
-//ÀûÓÃsourceÖĞµÄÁ´½ÓÏÂÔØimg,js,cssÎÄ¼ş
+//åˆ©ç”¨sourceä¸­çš„é“¾æ¥ä¸‹è½½img,js,cssæ–‡ä»¶
 public class GetSourceRunnable implements Runnable{
-	public static ArrayList<ArrayList<String>> pathLList; //ÓÃÀ´´æ·ÅpathList,ÒÔ±ãÊ¹ÓÃÍ¬Ò»¸öÖ÷»úµÄsocket£¬¼õÉÙÁ´½ÓËùĞèÒªµÄ»¨Ïú
-	public static ArrayList<String> pathList;	//´æ·ÅÁ´½ÓÏà¶ÔÓÚÖ÷»úµÄÂ·¾¶£¬ËùÓĞÂ·¾¶¶¼º¬ÓĞÏàÍ¬µÄÖ÷»úÃû
+	public static ArrayList<ArrayList<String>> pathLList; //ç”¨æ¥å­˜æ”¾pathList,ä»¥ä¾¿ä½¿ç”¨åŒä¸€ä¸ªä¸»æœºçš„socketï¼Œå‡å°‘é“¾æ¥æ‰€éœ€è¦çš„èŠ±é”€
+	public static ArrayList<String> pathList;	//å­˜æ”¾é“¾æ¥ç›¸å¯¹äºä¸»æœºçš„è·¯å¾„ï¼Œæ‰€æœ‰è·¯å¾„éƒ½å«æœ‰ç›¸åŒçš„ä¸»æœºå
 	ArrayList<String> hostList;
 	ArrayList<String> source;
 	String saveDirFile;
@@ -40,7 +40,7 @@ public class GetSourceRunnable implements Runnable{
 
 	@Override
 	public void run() {
-		getHostListAndPathList(source); //µÃµ½pathLList
+		getHostListAndPathList(source); //å¾—åˆ°pathLList
 		Iterator<ArrayList<String>> iter = pathLList.iterator();
 		ArrayList<String> src;
 		while (iter.hasNext()) {
@@ -51,72 +51,72 @@ public class GetSourceRunnable implements Runnable{
 			if(linkIter.hasNext()){
 				host = linkIter.next();
 			}
-			while(linkIter.hasNext()){ //ÆäËûµÄÎªÁ´½ÓÂ·¾¶
+			while(linkIter.hasNext()){ //å…¶ä»–çš„ä¸ºé“¾æ¥è·¯å¾„
 				insureConn(host);
 				path = linkIter.next();
-				connectServer(host); //µÚÒ»Ìõ×Ö·û´®ÊÇÖ÷»úÃû
+				connectServer(host); //ç¬¬ä¸€æ¡å­—ç¬¦ä¸²æ˜¯ä¸»æœºå
 				sendGetCmd(host,path);
 				download_Img_Js_Css(saveDirFile,path);
-				System.out.println("Ñ­»·");
+				System.out.println("å¾ªç¯");
 			}
 			closeSocket();
-			System.out.println("Ò»¸öÖ÷»úÉÏµÄ×ÊÔ´ÏÂÔØÍê³É");
+			System.out.println("ä¸€ä¸ªä¸»æœºä¸Šçš„èµ„æºä¸‹è½½å®Œæˆ");
 		}
 		Download.OK++;
 		if(Download.OK==2)
-			Download.jta.append("ÏÂÔØÍê³É");
-		System.out.println("ÏÂÔØÍê³É");
+			Download.jta.append("ä¸‹è½½å®Œæˆ");
+		System.out.println("ä¸‹è½½å®Œæˆ");
 			
 	}
 
 	private void insureConn(String host) {
 		isClose = srcDownloadSocket.isClosed();
-		while (isClose) {// ÒÑ¾­¶Ï¿ª£¬ÖØĞÂ½¨Á¢Á¬½Ó
+		while (isClose) {// å·²ç»æ–­å¼€ï¼Œé‡æ–°å»ºç«‹è¿æ¥
 			try {
 				connectServer(host);
 				isClose = false;
 			} catch (Exception se) {
-				System.out.println("´´½¨Á¬½ÓÊ§°Ü:"+host);
+				System.out.println("åˆ›å»ºè¿æ¥å¤±è´¥:"+host);
 				isClose = true;
 			}
 		}
 		
 	}
 
-	// ³¤Á¬½Ó·şÎñÆ÷
+	// é•¿è¿æ¥æœåŠ¡å™¨
 	public boolean connectServer(String host) {
 		int port = 80;
 		try {
 			InetAddress addr = InetAddress.getByName(host);
 			srcDownloadSocket = new Socket(addr, port);
-			srcDownloadSocket.setKeepAlive(true); // ³¤Á¬½Ó
-			srcDownloadSocket.setSoTimeout(sotimeout); // ÉèÖÃ³¬Ê±
+			srcDownloadSocket.setKeepAlive(true); // é•¿è¿æ¥
+			srcDownloadSocket.setSoTimeout(sotimeout); // è®¾ç½®è¶…æ—¶
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "ÎŞ·¨Á¬½Ó"+host);
+			JOptionPane.showMessageDialog(null, "æ— æ³•è¿æ¥"+host);
 			return false;
 		}
 		isClose = !srcDownloadSocket.isConnected();
 		int testTime = 0;
 		while (isClose) {
 			testTime++;
-			if (testTime >= 3) { // ³¢ÊÔÁ¬½Ó3´Î£¬¶¼Á¬²»ÉÏÊ±·ÅÆúÁ¬½Ó
-				JOptionPane.showMessageDialog(null, "ÎŞ·¨Á¬½Ó"+host);
+			if (testTime >= 3) { // å°è¯•è¿æ¥3æ¬¡ï¼Œéƒ½è¿ä¸ä¸Šæ—¶æ”¾å¼ƒè¿æ¥
+				JOptionPane.showMessageDialog(null, "æ— æ³•è¿æ¥"+host);
 				break;
 			}
 		}
 		if (testTime >= 3){
-			System.out.println("Á´½ÓÊ§°Ü");
-			return false; // ½áÊø¸ÃÖ÷»úµÄÁ¬½Ó
+			System.out.println("é“¾æ¥å¤±è´¥");
+			return false; // ç»“æŸè¯¥ä¸»æœºçš„è¿æ¥
 		}
-		System.out.println("Á´½Ó³É¹¦");
+		System.out.println("é“¾æ¥æˆåŠŸ");
 		return true;
 	}
 
-	// ÅĞ¶ÏÊÇ·ñÁ¬½ÓÉÏ
+	// åˆ¤æ–­æ˜¯å¦è¿æ¥ä¸Š
 //	public boolean judgeConn(Socket so) {
 //		try {
 //			PrintWriter out = new PrintWriter(so.getOutputStream(), true);
-//			out.println("2"); // Î´ÖªÕâ¸öÊÇ·ñ»áÓĞÊ²Ã´²»Á¼Ó°Ïì£¬Èç¹û±¨´í£¬±íÊ¾Ã»ÓĞÁ¬½ÓÉÏ
+//			out.println("2"); // æœªçŸ¥è¿™ä¸ªæ˜¯å¦ä¼šæœ‰ä»€ä¹ˆä¸è‰¯å½±å“ï¼Œå¦‚æœæŠ¥é”™ï¼Œè¡¨ç¤ºæ²¡æœ‰è¿æ¥ä¸Š
 //			return true;
 //		} catch (Exception e) {
 //			e.printStackTrace();
@@ -125,17 +125,17 @@ public class GetSourceRunnable implements Runnable{
 //
 //	}
 	
-	// ÅĞ¶ÏsocketÊÇ·ñÒÑ¶Ï¿ª
+	// åˆ¤æ–­socketæ˜¯å¦å·²æ–­å¼€
 //	public boolean _SeverIsClose() {
 //		try {
-//			srcDownloadSocket.sendUrgentData(0);// ·¢ËÍ1¸ö×Ö½ÚµÄ½ô¼±Êı¾İ£¬Ä¬ÈÏÇé¿öÏÂ£¬·şÎñÆ÷¶ËÃ»ÓĞ¿ªÆô½ô¼±Êı¾İ´¦Àí£¬²»Ó°ÏìÕı³£Í¨ĞÅ
+//			srcDownloadSocket.sendUrgentData(0);// å‘é€1ä¸ªå­—èŠ‚çš„ç´§æ€¥æ•°æ®ï¼Œé»˜è®¤æƒ…å†µä¸‹ï¼ŒæœåŠ¡å™¨ç«¯æ²¡æœ‰å¼€å¯ç´§æ€¥æ•°æ®å¤„ç†ï¼Œä¸å½±å“æ­£å¸¸é€šä¿¡
 //			return false;
 //		} catch (Exception se) {
 //			return true;
 //		}
 //	}
 
-	// ·¢ËÍgetÖ¸Áî
+	// å‘é€getæŒ‡ä»¤
 	public boolean sendGetCmd(String host, String path){
 		try {
 			Bwriter = new BufferedWriter(new OutputStreamWriter(srcDownloadSocket.getOutputStream(), "UTF-8"));
@@ -143,17 +143,17 @@ public class GetSourceRunnable implements Runnable{
 			Bwriter.write("GET " + path + " HTTP/1.0\r\n");
 			Bwriter.write("\r\n");
 			Bwriter.flush();
-			System.out.println("·¢ËÍÖ¸ÁîÍê³É");
+			System.out.println("å‘é€æŒ‡ä»¤å®Œæˆ");
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Ö¸Áî·¢ËÍÊ§°Ü");
+			System.out.println("æŒ‡ä»¤å‘é€å¤±è´¥");
 			return false;
 		}
 
 	}
 
-	// ÏÂÔØÎÄ¼ş:hostÏÂµÄpath
+	// ä¸‹è½½æ–‡ä»¶:hostä¸‹çš„path
 	public synchronized void download_Img_Js_Css(String saveDir,String path){
 		// tEncode = Helper.getFileEncoding(new URL("http://"+host+path));
 		try{
@@ -161,9 +161,9 @@ public class GetSourceRunnable implements Runnable{
 			
 			InputStream is = srcDownloadSocket.getInputStream();
 			
-			FileOutputStream fos = new FileOutputStream(srcfile); // Êä³ö
+			FileOutputStream fos = new FileOutputStream(srcfile); // è¾“å‡º
 			DataInputStream dis = new DataInputStream(is);
-			clearHead(dis, "UTF-8"); // Çå³ıÁ÷ÖĞµÄÍ·ĞÅÏ¢
+			clearHead(dis, "UTF-8"); // æ¸…é™¤æµä¸­çš„å¤´ä¿¡æ¯
 			
 			int data = -1;
 			byte b[] = new byte[10024];
@@ -172,8 +172,8 @@ public class GetSourceRunnable implements Runnable{
 			}
 
 			fos.flush();
-			System.out.println("ÏÂÔØ"+path+"Íê³É");
-			// ¹Ø±ÕÊäÈëÊä³öÁ÷
+			System.out.println("ä¸‹è½½"+path+"å®Œæˆ");
+			// å…³é—­è¾“å…¥è¾“å‡ºæµ
 			is.close();
 			fos.close();
 		}catch(Exception e){
@@ -181,21 +181,21 @@ public class GetSourceRunnable implements Runnable{
 		}
 	}
 
-	//¹Ø±Õsocket
+	//å…³é—­socket
 	public void closeSocket(){
 		try{		
 			if(srcDownloadSocket.isConnected() && !srcDownloadSocket.isClosed()){
 				srcDownloadSocket.close();
-				System.out.println("socket¹Ø±Õ³É¹¦");
+				System.out.println("socketå…³é—­æˆåŠŸ");
 				return;
 			}
-			System.out.println("socket¹Ø±ÕÊ§°Ü");
+			System.out.println("socketå…³é—­å¤±è´¥");
 		}catch(Exception e){
-			System.out.println("socket¹Ø±ÕÊ§°Ü");
+			System.out.println("socketå…³é—­å¤±è´¥");
 			e.printStackTrace();
 		}
 	}
-	// ÀûÓÃ×Ö½Ú¶ÁÈ¡Ò»ĞĞ×Ö·û´®
+	// åˆ©ç”¨å­—èŠ‚è¯»å–ä¸€è¡Œå­—ç¬¦ä¸²
 	public static String readLine(DataInputStream dIS, String tEncode) throws IOException {
 		int data = -1;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -207,10 +207,10 @@ public class GetSourceRunnable implements Runnable{
 		return new String(baos.toByteArray(), tEncode);
 	}
 
-	// Çå³ıÍ·ĞÅÏ¢
+	// æ¸…é™¤å¤´ä¿¡æ¯
 	public static void clearHead(DataInputStream dis, String tEncode) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		System.out.println("clearheadÀïÃæ");
+		System.out.println("clearheadé‡Œé¢");
 		int n = 0;
 		for (;;) {
 			int data = dis.read();
@@ -230,17 +230,17 @@ public class GetSourceRunnable implements Runnable{
 			n++;
 			System.out.println((char)data);
 		}
-		System.out.println("Í·ÎÄ¼ş¶ÁÈ¡Íê³É");
+		System.out.println("å¤´æ–‡ä»¶è¯»å–å®Œæˆ");
 	}
 	//TODO
-	// ·ÖÀëÖ÷»úÃûºÍÂ·¾¶Ãû³Æ
+	// åˆ†ç¦»ä¸»æœºåå’Œè·¯å¾„åç§°
 	public void getHostListAndPathList(ArrayList<String> linkSrc) {
 		// http://blog.csdn.net/xiaoranchenxi/article/details/4008351
-		// ÖĞÈç¹ûÓÃurl»ñÈ¡£º
+		// ä¸­å¦‚æœç”¨urlè·å–ï¼š
 		// host :blog.csdn.net 
 		// path:/xiaoranchenxi/article/details/4008351
 		
-		//ÅÅĞò£¬Ê¹ËùÓĞµÄÖ÷»úÃûÏàÍ¬µÄ¿¿ÔÚÒ»Æğ
+		//æ’åºï¼Œä½¿æ‰€æœ‰çš„ä¸»æœºåç›¸åŒçš„é åœ¨ä¸€èµ·
 		linkSrc.sort(new Comparator<String>(){
 			@Override
 			public int compare(String str1, String str2) {
@@ -249,7 +249,7 @@ public class GetSourceRunnable implements Runnable{
 		});
 		hostList = new ArrayList<String>();
 		pathLList = new ArrayList<ArrayList<String>>();
-		// Êı¾İÒÑ¾­ÅÅĞò£¬ËùÓĞÖ÷»úÃûÏàÍ¬µÄ¶¼¿¿ÔÚÒ»ÆğÁË
+		// æ•°æ®å·²ç»æ’åºï¼Œæ‰€æœ‰ä¸»æœºåç›¸åŒçš„éƒ½é åœ¨ä¸€èµ·äº†
 		Iterator<String> iter = linkSrc.iterator(); // linkSrc
 													
 		while (iter.hasNext()) {
@@ -258,21 +258,21 @@ public class GetSourceRunnable implements Runnable{
 				
 				String host = getHost(src);
 				String path = getPath(src);
-				if (hostList.contains(host)) { // ±íÃ÷µ±Ç°µÄArrayList¾ÍÊÇ¸ÃÖ÷»úÃûµÄList
+				if (hostList.contains(host)) { // è¡¨æ˜å½“å‰çš„ArrayListå°±æ˜¯è¯¥ä¸»æœºåçš„List
 					pathList.add(path);
 				} else {
 					pathList = new ArrayList<String>();
-					pathList.add(host); // µÚÒ»¸öÔªËØ×÷ÎªÖ÷»úÃû£¬ÓÃÓÚ×÷ÎªsocketµÄÁ´½ÓÖ÷»ú
+					pathList.add(host); // ç¬¬ä¸€ä¸ªå…ƒç´ ä½œä¸ºä¸»æœºåï¼Œç”¨äºä½œä¸ºsocketçš„é“¾æ¥ä¸»æœº
 					hostList.add(host);
 					pathLList.add(pathList);
 				}
 			}
 			else{
-				System.out.println(src+" ²»ÊÇhttpÁ´½Ó");
+				System.out.println(src+" ä¸æ˜¯httpé“¾æ¥");
 			}
-			// ·Ç·¨µÄurl,±ÈÈçhttps://Ğ­ÒéµÄÁ´½Ó£¬½«»á±»Ìø¹ı²»×ö´¦Àí
+			// éæ³•çš„url,æ¯”å¦‚https://åè®®çš„é“¾æ¥ï¼Œå°†ä¼šè¢«è·³è¿‡ä¸åšå¤„ç†
 		}
-		//[DEBUG]£º²é¿´×ÊÔ´ÊÇ·ñËÑ¼¯ÍêÕûºÍÊÕ¼¯ÕıÈ·
+		//[DEBUG]ï¼šæŸ¥çœ‹èµ„æºæ˜¯å¦æœé›†å®Œæ•´å’Œæ”¶é›†æ­£ç¡®
 		System.out.println("******************");
 		//TODO
 		Iterator<String> iter2 = linkSrc.iterator();
@@ -291,9 +291,9 @@ public class GetSourceRunnable implements Runnable{
 //			int count = 1;
 //			if(linkIter.hasNext()){
 //				host = linkIter.next();
-//				System.out.println("Ö÷»úÎª£º"+host);
+//				System.out.println("ä¸»æœºä¸ºï¼š"+host);
 //			}
-//			while(linkIter.hasNext()){ //ÆäËûµÄÎªÁ´½ÓÂ·¾¶
+//			while(linkIter.hasNext()){ //å…¶ä»–çš„ä¸ºé“¾æ¥è·¯å¾„
 //				path = linkIter.next();
 //				System.out.println(count + " "+path);
 //				count++;

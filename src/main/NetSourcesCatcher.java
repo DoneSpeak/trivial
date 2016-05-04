@@ -29,19 +29,19 @@ public class NetSourcesCatcher {
 	}
 }
 
-//³ÌĞòÖ÷´°Ìå
+//ç¨‹åºä¸»çª—ä½“
 class SimpleFrame extends JFrame implements ActionListener {
 	JPanel jp = new JPanel();
 	JTextField inputUrl = new JTextField(26);
-	JButton btn = new JButton("ÏÂÔØ");
+	JButton btn = new JButton("ä¸‹è½½");
 	JTextArea showStatus = new JTextArea();
 	JScrollPane jsp;
 	Download download;
 
 	public SimpleFrame() {
-		super("ÍøÒ³×¥È¡");
+		super("ç½‘é¡µæŠ“å–");
 		setLayout(new BorderLayout());
-		//ÉèÖÃ´°Ìå¾ÓÖĞÏÔÊ¾
+		//è®¾ç½®çª—ä½“å±…ä¸­æ˜¾ç¤º
 		Toolkit kit=getToolkit();
 		Dimension winSize=kit.getScreenSize();
 		setBounds((winSize.width-380)/2,(winSize.height-220)/2,380,220);
@@ -66,10 +66,10 @@ class SimpleFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource().equals(btn)) { // ÕâÀïĞèÒªµÃµ½Ô´
+		if (e.getSource().equals(btn)) { // è¿™é‡Œéœ€è¦å¾—åˆ°æº
 			if (inputUrl.getText() == null || inputUrl.getText().equals("")
 					|| inputUrl.getText().equals(Character.toString((char) '0'))) {
-				JOptionPane.showMessageDialog(this, "ÇëÊäÈëÍøÖ·£¡");
+				JOptionPane.showMessageDialog(this, "è¯·è¾“å…¥ç½‘å€ï¼");
 				return;
 			}
 			String url = inputUrl.getText();
@@ -78,19 +78,19 @@ class SimpleFrame extends JFrame implements ActionListener {
 			}
 			String errMsg = Helper.checkHTTP(url);
 			if (errMsg != null) {
-				JOptionPane.showMessageDialog(this, errMsg + "\n" + "ÇëÖØĞÂÊäÈëĞ­ÒéÎªhttpµÄÍøÖ·");
-				// System.out.println("ÍøÒ³Á´½Ó²»ºÏ·¨£¡");
+				JOptionPane.showMessageDialog(this, errMsg + "\n" + "è¯·é‡æ–°è¾“å…¥åè®®ä¸ºhttpçš„ç½‘å€");
+				// System.out.println("ç½‘é¡µé“¾æ¥ä¸åˆæ³•ï¼");
 				return;
 			}
 			JFileChooser fChooser = new JFileChooser();
-			fChooser.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY); // ±ØĞëÏÈÉèÖÃÑ¡ÔñÑùÊ½ÔÙÉèÖÃ´ò¿ª¶Ô»°¿ò
-			fChooser.showDialog(null, "±£´æ");
+			fChooser.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY); // å¿…é¡»å…ˆè®¾ç½®é€‰æ‹©æ ·å¼å†è®¾ç½®æ‰“å¼€å¯¹è¯æ¡†
+			fChooser.showDialog(null, "ä¿å­˜");
 
 			File saveDir = fChooser.getSelectedFile();
 			if (saveDir == null) {
 				return;
 			}
-			// ÀûÓÃÏß³ÌÀ´ÏÂÔØÎÄ¼ş£¬ÔÚÏß³ÌÖĞ´¦ÀíÍøÒ³ĞÅÏ¢
+			// åˆ©ç”¨çº¿ç¨‹æ¥ä¸‹è½½æ–‡ä»¶ï¼Œåœ¨çº¿ç¨‹ä¸­å¤„ç†ç½‘é¡µä¿¡æ¯
 			download = new Download(url, showStatus, saveDir.getAbsolutePath());
 			Thread thread = new Thread(download);
 			thread.start();
@@ -99,9 +99,9 @@ class SimpleFrame extends JFrame implements ActionListener {
 
 }
 
-// ÏÂÔØÍøÒ³ÖĞ×ÊÔ´
+// ä¸‹è½½ç½‘é¡µä¸­èµ„æº
 class Download implements Runnable {
-	// [start]DownloadµÄ±äÁ¿
+	// [start]Downloadçš„å˜é‡
 	private static final String SOURCE_REG = "<((img)|(script)|(link))(.*?)[^>]*?>";
 	public static int OK = 0;
 	public static int downloadNum = 0;
@@ -112,7 +112,7 @@ class Download implements Runnable {
 	String hostname;
 	File savefile;
 	public File saveDirFile;
-	String encode = "UTF-8"; // ±àÂëÄ¬ÈÏUTF-8
+	String encode = "UTF-8"; // ç¼–ç é»˜è®¤UTF-8
 
 	StringBuffer htmlSb = new StringBuffer();
 	StringBuffer info = new StringBuffer();
@@ -129,18 +129,18 @@ class Download implements Runnable {
 	}
 
 	@Override
-	//ÏÂÔØhtmlÎÄ¼ş£¬»ñÈ¡htmlÖĞµÄimg,js,cssÁ´½Ó£¬htmlÁ´½ÓÌæ»»
+	//ä¸‹è½½htmlæ–‡ä»¶ï¼Œè·å–htmlä¸­çš„img,js,cssé“¾æ¥ï¼Œhtmlé“¾æ¥æ›¿æ¢
 	public void run() {
-		//System.out.println("thread"+javax.swing.SwingUtilities.isEventDispatchThread()); //ÅĞ¶Ï¿ÉÖªÊÇÔÚºóÌ¨Ïß³Ì
+		//System.out.println("thread"+javax.swing.SwingUtilities.isEventDispatchThread()); //åˆ¤æ–­å¯çŸ¥æ˜¯åœ¨åå°çº¿ç¨‹
 		try {
 			URL url = new URL(urlString);
-			//[start] ÔÚÎÄ±¾ÓòÖĞÕ¹Ê¾Á´½ÓĞÅÏ¢
-			info.append("·ÃÎÊÖ÷»ú£º" + url.getHost() + "\n");
-			info.append("·ÃÎÊ¶Ë¿Ú£º" + url.getDefaultPort() + "\n");
+			//[start] åœ¨æ–‡æœ¬åŸŸä¸­å±•ç¤ºé“¾æ¥ä¿¡æ¯
+			info.append("è®¿é—®ä¸»æœºï¼š" + url.getHost() + "\n");
+			info.append("è®¿é—®ç«¯å£ï¼š" + url.getDefaultPort() + "\n");
 			jta.setText(info.toString());
 			//[end]
 	
-			//[start]Á´½Ósocket¼°·¢ËÍÖ¸Áî
+			//[start]é“¾æ¥socketåŠå‘é€æŒ‡ä»¤
 			encode = Helper.getFileEncoding(url);
 			String params = URLEncoder.encode("param1", encode) + "=" + URLEncoder.encode("value1", encode);
 			params += "&" + URLEncoder.encode("param2", encode) + "=" + URLEncoder.encode("value2", encode);
@@ -149,14 +149,14 @@ class Download implements Runnable {
 			int port = 80;
 			InetAddress addr = InetAddress.getByName(hostname);
 			socket = new Socket(addr, port);
-			socket.setSoTimeout(4000); //ÉèÖÃ4ÃëµÈ´ıÊ±¼ä
+			socket.setSoTimeout(4000); //è®¾ç½®4ç§’ç­‰å¾…æ—¶é—´
 			String path = url.getPath() == null?"/":url.getPath();
 			
 			wr = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), encode));
 			if(path.equals("/"))
 				wr.write("GET " + path + " HTTP/1.0\r\n");
 			else
-				wr.write("POST " + path + " HTTP/1.0\r\n"); //²»ĞèÒªÌá½»ĞÅÏ¢£¬ËùÒÔÖ»Òªget¼´¿É
+				wr.write("POST " + path + " HTTP/1.0\r\n"); //ä¸éœ€è¦æäº¤ä¿¡æ¯ï¼Œæ‰€ä»¥åªè¦getå³å¯
 			wr.write("HOST:" + hostname + "\r\n");
 			wr.write("Content-Length: " + params.length() + "\r\n");
 			wr.write("Content-Type: application/x-www-form-urlencoded\r\n");
@@ -165,20 +165,20 @@ class Download implements Runnable {
 			wr.write(params);
 			wr.flush();
 			//[end]
-			jta.append("ÕıÔÚÏÂÔØ..." + "\n");
+			jta.append("æ­£åœ¨ä¸‹è½½..." + "\n");
 			
 			rd = new BufferedReader(new InputStreamReader(socket.getInputStream(), encode));
 			String line = null;
 			
-			//È¥³ıÍ·²¿ĞÅÏ¢
+			//å»é™¤å¤´éƒ¨ä¿¡æ¯
 			clearHead(new DataInputStream(socket.getInputStream()),encode);
 			
-			//[start]»ñÈ¡title
+			//[start]è·å–title
 			String title = null;
 			
 			while ((line = rd.readLine()) != null) {
 //				System.out.print(line+"\r\n");	
-				line = formatLine(line,new File(saveDir)); //¿¼ÂÇµ½ÒÔÍøÒ³titleÃûÃüÃûµÄÄ¿Â¼ÉĞÎ´Éú³É£¬ËùÒÔÕâÀï±£´æÔÚÑ¡ÔñµÄ±£´æÄ¿Â¼ÏÂ
+				line = formatLine(line,new File(saveDir)); //è€ƒè™‘åˆ°ä»¥ç½‘é¡µtitleåå‘½åçš„ç›®å½•å°šæœªç”Ÿæˆï¼Œæ‰€ä»¥è¿™é‡Œä¿å­˜åœ¨é€‰æ‹©çš„ä¿å­˜ç›®å½•ä¸‹
 				htmlSb.append(line);
 				htmlSb.append("\r\n");
 				if(line.contains("</title>"))
@@ -190,15 +190,15 @@ class Download implements Runnable {
 			}
 
 
-			// ¶ÁÈ¡²»µ½ĞÅÏ¢£¬¹À¼ÆÊÇÁ´½ÓÊ§°Ü
+			// è¯»å–ä¸åˆ°ä¿¡æ¯ï¼Œä¼°è®¡æ˜¯é“¾æ¥å¤±è´¥
 			if (htmlSb.length() <= 0) {
-				JOptionPane.showMessageDialog(null, "ÎŞ·¨ÏÂÔØ´ËÍøÒ³£¡");
-				jta.append("ÏÂÔØÊ§°Ü");
+				JOptionPane.showMessageDialog(null, "æ— æ³•ä¸‹è½½æ­¤ç½‘é¡µï¼");
+				jta.append("ä¸‹è½½å¤±è´¥");
 				socket.close();
 				return;
 			}
 			
-			//Ã»ÓĞÕÒµ½ÌâÄ¿£¬ÓÃÍøÒ³µÄ×îºóÒ»¼¶×÷ÎªÌâÄ¿
+			//æ²¡æœ‰æ‰¾åˆ°é¢˜ç›®ï¼Œç”¨ç½‘é¡µçš„æœ€åä¸€çº§ä½œä¸ºé¢˜ç›®
 			if(title == null)
 			{
 				if(path.equals("/")){
@@ -214,11 +214,11 @@ class Download implements Runnable {
 					}
 				}
 			}
-			//Ìæ»»ÎÄ¼şÃûÖĞµÄ·Ç·¨×Ö·û
+			//æ›¿æ¢æ–‡ä»¶åä¸­çš„éæ³•å­—ç¬¦
 			title = title.replaceAll("[\\/:[*][?]\"<>|]", "_");
 			title = title.replaceAll("\\s+", " ");
-			//[end]»ñÈ¡title
-			//[start]±£´æÎÄ¼ş,ÔÚ±£´æÎÄ¼şÖĞÒÑ´æÔÚÎÄ¼şÊÇ£¬¶ÔÎÄ¼şÃû½øĞĞÍØÕ¹£¬»ñÈ¡±£´æÂ·¾¶£¬ÎªËùµÃÎÄµµimg,js,cssÂ·¾¶Ìæ»»×¼±¸
+			//[end]è·å–title
+			//[start]ä¿å­˜æ–‡ä»¶,åœ¨ä¿å­˜æ–‡ä»¶ä¸­å·²å­˜åœ¨æ–‡ä»¶æ˜¯ï¼Œå¯¹æ–‡ä»¶åè¿›è¡Œæ‹“å±•ï¼Œè·å–ä¿å­˜è·¯å¾„ï¼Œä¸ºæ‰€å¾—æ–‡æ¡£img,js,cssè·¯å¾„æ›¿æ¢å‡†å¤‡
 			savefile = new File(saveDir+"\\"+title+".html");
 			int n = 0;
 			String expand = "_net";
@@ -227,7 +227,7 @@ class Download implements Runnable {
 				n++;
 				expand = expand.substring(0,expand.lastIndexOf("t"))+"t_"+n;	
 			}
-			//´´½¨±£´æimgµÈÎÄ¼şµÄÄ¿Â¼
+			//åˆ›å»ºä¿å­˜imgç­‰æ–‡ä»¶çš„ç›®å½•
 			String savePath = savefile.getAbsolutePath().substring(0,savefile.getAbsolutePath().lastIndexOf("."))+"_files";
 			saveDirFile = new File(savePath);
 			n = 1;
@@ -240,9 +240,9 @@ class Download implements Runnable {
 			//[end]
 			BufferedWriter tohtmlfile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(savefile),encode));
 			tohtmlfile.write(htmlSb.toString());
-			//¶ÁÈ¡Ê£ÏÂµÄ×Ö·û´®
+			//è¯»å–å‰©ä¸‹çš„å­—ç¬¦ä¸²
 			while ((line = rd.readLine()) != null) {
-				line = formatLine(line,saveDirFile); //»ñÈ¡Á´½Ó£¬Í¬Ê±Ìæ»»lineÖĞÁ´½ÓÎª±¾µØ
+				line = formatLine(line,saveDirFile); //è·å–é“¾æ¥ï¼ŒåŒæ—¶æ›¿æ¢lineä¸­é“¾æ¥ä¸ºæœ¬åœ°
 				tohtmlfile.write(line);
 				tohtmlfile.newLine();
 				tohtmlfile.flush();
@@ -251,43 +251,43 @@ class Download implements Runnable {
 			wr.close();
 			rd.close();
 			tohtmlfile.close();
-			System.out.println("³É¹¦Éú³ÉhtmlÎÄ¼ş");
-			OK++; //Ò»¸ö×ÊÔ´ÏÂÔØ
+			System.out.println("æˆåŠŸç”Ÿæˆhtmlæ–‡ä»¶");
+			OK++; //ä¸€ä¸ªèµ„æºä¸‹è½½
 			downloadNum++;
 			if(source.size()==0){
-				jta.append("ÏÂÔØÍê³É");
+				jta.append("ä¸‹è½½å®Œæˆ");
 			}
 
-			//ÏÂÔØjs,img,css
+			//ä¸‹è½½js,img,css
 			Iterator <String> iter = source.iterator();
 			int portNum = 80;
 			while(iter.hasNext()){
 				String urlString = iter.next();
 				if(Helper.isLegalURL(urlString)){	
 					downloadNum++;
-//					portNum ++; //¶Ôµ¥Ò»Ö÷»ú½øĞĞ¶à¶Ë¿Ú·ÃÎÊÉèÏë¶ø¼ÓÉÏÒ»¸öpartNum
+//					portNum ++; //å¯¹å•ä¸€ä¸»æœºè¿›è¡Œå¤šç«¯å£è®¿é—®è®¾æƒ³è€ŒåŠ ä¸Šä¸€ä¸ªpartNum
 					new Thread(new myRunnable(urlString,portNum)).start();		
 				}
 				
 			}
 			
-//TODO		¶Ôµ¥Ò»Ö÷»ú³¤Á¬½ÓÉèÏë¶øĞ´µÄÏÂÔØ×ÊÔ´Ïß³Ì£¬Î´ÍêÉÆ
+//TODO		å¯¹å•ä¸€ä¸»æœºé•¿è¿æ¥è®¾æƒ³è€Œå†™çš„ä¸‹è½½èµ„æºçº¿ç¨‹ï¼Œæœªå®Œå–„
 //			new Thread(new GetSourceRunnable(source,saveDirFile.getAbsolutePath())).start();
 			
 			if(socket.isConnected() && !socket.isClosed()){
 			try {
 				socket.close();
 			} catch (IOException e) {
-				System.err.println("socket¹Ø±Õ³ö´í");
+				System.err.println("socketå…³é—­å‡ºé”™");
 				e.printStackTrace();
 			}
 		}
 		}catch(NumberFormatException e){
-			System.err.println("×ÊÔ´»ñÈ¡³ö´í¡£\n");
-			JOptionPane.showMessageDialog(null, "ÎŞ·¨ÏÂÔØ´ËÍøÒ³£¡");
+			System.err.println("èµ„æºè·å–å‡ºé”™ã€‚\n");
+			JOptionPane.showMessageDialog(null, "æ— æ³•ä¸‹è½½æ­¤ç½‘é¡µï¼");
 			e.printStackTrace();
 		} catch(IOException e){
-			JOptionPane.showMessageDialog(null, "ÎŞ·¨ÏÂÔØ´ËÍøÒ³£¡");
+			JOptionPane.showMessageDialog(null, "æ— æ³•ä¸‹è½½æ­¤ç½‘é¡µï¼");
 			e.printStackTrace();
 		}finally{
 			
@@ -295,7 +295,7 @@ class Download implements Runnable {
 	}
 	
 	public String formatLine(String line,File saveDirFile){
-		String temp = line.replaceAll("[=\"'\\s]+", "=");  //src="http://a"; src='http://a'; src=http://a ×ª»¯Îª src=http://a=
+		String temp = line.replaceAll("[=\"'\\s]+", "=");  //src="http://a"; src='http://a'; src=http://a è½¬åŒ–ä¸º src=http://a=
 		Pattern p = Pattern.compile(SOURCE_REG);
 		Matcher m = p.matcher(temp);
 		String srcLink = null;
@@ -303,7 +303,7 @@ class Download implements Runnable {
 		StringBuffer sb = new StringBuffer();
 		String findLine;
 		
-		while (m.find()) { // µÃµ½ <img >Ö®Àà
+		while (m.find()) { // å¾—åˆ° <img >ä¹‹ç±»
 			findLine = m.group();
 			System.out.println(findLine);
 			String lowCaseTemp2 = findLine.toLowerCase();
@@ -311,8 +311,8 @@ class Download implements Runnable {
 				sb = new StringBuffer(findLine); 
 				int start = sb.indexOf("src=");
 				if (start != -1) {
-					sb.replace(0, start + 4, ""); //È¥³ı¡°src=¡±
-//					System.out.println("×ÊÔ´£º"+sb.toString());
+					sb.replace(0, start + 4, ""); //å»é™¤â€œsrc=â€
+//					System.out.println("èµ„æºï¼š"+sb.toString());
 					start = sb.indexOf("=");
 					if (start != -1) {
 						sb.replace(start, sb.length(), "");
@@ -321,7 +321,7 @@ class Download implements Runnable {
 //							count++;
 						srcLink = sb.toString();
 					}
-					//È«²¿srcLinkÁ´½Ó±»¸øÎª¸ñÊ½£ºhttp://www.fanya.chaoxing.com/passport/allHead.shtml
+					//å…¨éƒ¨srcLinké“¾æ¥è¢«ç»™ä¸ºæ ¼å¼ï¼šhttp://www.fanya.chaoxing.com/passport/allHead.shtml
 					if(srcLink.indexOf("://")<0){ 
 						newLink = "http://"+hostname+srcLink.replaceFirst("[[.]/]*", "/");
 						source.add(newLink);
@@ -337,7 +337,7 @@ class Download implements Runnable {
 						//*/
 					}
 					
-					//Ìæ»»Îª±¾µØÁ¬½Ó £¬¸ñÊ½ÑùÀı£º"./°ï¿ÍÖ®¼Ò_files/article.css"
+					//æ›¿æ¢ä¸ºæœ¬åœ°è¿æ¥ ï¼Œæ ¼å¼æ ·ä¾‹ï¼š"./å¸®å®¢ä¹‹å®¶_files/article.css"
 //					newLink = "./"+saveDirFile.getName()+"/"+newLink.substring(newLink.lastIndexOf('/')+1); 
 //					line = line.replace(srcLink, newLink);
 					if(newLink!=null){
@@ -355,7 +355,7 @@ class Download implements Runnable {
 				int start = sb.indexOf("href=");
 				if (start != -1) {
 					sb.replace(0, start + 5, "");
-//					System.out.println("×ÊÔ´£º"+sb.toString());
+//					System.out.println("èµ„æºï¼š"+sb.toString());
 					start = sb.indexOf("=");
 					if (start != -1) {
 						sb.replace(start, sb.length(), "");
@@ -363,7 +363,7 @@ class Download implements Runnable {
 //						System.out.println(count + " : " + sb.toString());
 //						count++;
 						
-						//È«²¿srcLinkÁ´½Ó±»¸øÎª¸ñÊ½£ºhttp://www.fanya.chaoxing.com/passport/allHead.shtml
+						//å…¨éƒ¨srcLinké“¾æ¥è¢«ç»™ä¸ºæ ¼å¼ï¼šhttp://www.fanya.chaoxing.com/passport/allHead.shtml
 						srcLink = sb.toString();
 						if(srcLink.indexOf("://")<0){ 
 							newLink = "http://"+hostname+srcLink.replaceFirst("[[.]/]*", "/");
@@ -380,7 +380,7 @@ class Download implements Runnable {
 							//*/
 						}
 						
-//						//Ìæ»»Îª±¾µØÁ¬½Ó //¸ñÊ½ÑùÀı£º"./°ï¿ÍÖ®¼Ò_files/article.css"
+//						//æ›¿æ¢ä¸ºæœ¬åœ°è¿æ¥ //æ ¼å¼æ ·ä¾‹ï¼š"./å¸®å®¢ä¹‹å®¶_files/article.css"
 						newLink = "./"+saveDirFile.getName()+"/"+newLink.substring(newLink.lastIndexOf('/')+1); 
 						sb = new StringBuffer(line);
 						start = line.indexOf(srcLink);
@@ -393,7 +393,7 @@ class Download implements Runnable {
 		return line;
 	}
 	
-	//ÉèÏë¶à¸ö¶Ë¿ÚÍ¬Ê±¶Ô×ÊÔ´Ò»ÆğÏÂÔØ¶øĞ´
+	//è®¾æƒ³å¤šä¸ªç«¯å£åŒæ—¶å¯¹èµ„æºä¸€èµ·ä¸‹è½½è€Œå†™
 	class myRunnable implements Runnable{
 		String urlString;
 		int portNum;
@@ -411,13 +411,13 @@ class Download implements Runnable {
 			}finally{
 				OK++;
 				if(OK==downloadNum){
-					jta.append("ÏÂÔØÍê³É");
-					JOptionPane.showMessageDialog(null, "ÏÂÔØÍê³É£¡");
+					jta.append("ä¸‹è½½å®Œæˆ");
+					JOptionPane.showMessageDialog(null, "ä¸‹è½½å®Œæˆï¼");
 				}
 			}
 		}
 	}
-	// URLÕı¹æ»¯
+	// URLæ­£è§„åŒ–
 	public String formatURL(String srcLink) {
 		String newLink;
 		if (srcLink.indexOf("://") < 0) {
@@ -426,12 +426,12 @@ class Download implements Runnable {
 		} else {
 			return srcLink;
 		}
-		// È«²¿srcLinkÁ´½Ó±»¸øÎª¸ñÊ½£ºhttp://www.fanya.chaoxing.com/passport/allHead.shtml
+		// å…¨éƒ¨srcLinké“¾æ¥è¢«ç»™ä¸ºæ ¼å¼ï¼šhttp://www.fanya.chaoxing.com/passport/allHead.shtml
 	}
 
 	public static void clearHead(DataInputStream dis, String tEncode) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		System.out.println("clearheadÀïÃæ");
+		System.out.println("clearheadé‡Œé¢");
 		for (;;) {
 			int data = dis.read();
 			if (data < 0) {
@@ -447,7 +447,7 @@ class Download implements Runnable {
 			if (data != 13)
 				baos.write(data);
 		}
-		System.out.println("Í·ÎÄ¼ş¶ÁÈ¡Íê³É");
+		System.out.println("å¤´æ–‡ä»¶è¯»å–å®Œæˆ");
 	}
 
 	public synchronized void download_Img_Js_Css(String urlString, int port) throws IOException {
@@ -468,12 +468,12 @@ class Download implements Runnable {
 		File srcfile = new File(saveDirFile.getAbsolutePath() + "\\" + Helper.getSrcName(path));
 
 		InputStream is = tSocket.getInputStream();
-		FileOutputStream fos = new FileOutputStream(srcfile); // Êä³ö
-		System.out.println("fileOutputºóÃæ");
+		FileOutputStream fos = new FileOutputStream(srcfile); // è¾“å‡º
+		System.out.println("fileOutputåé¢");
 		DataInputStream dis = new DataInputStream(is);
 		clearHead(dis, tEncode);
-		System.out.println("clearheadºóÃæ");
-		// ½«µÃµ½µÄÎÄ¼şÄÚÈİ¶ÁÈëµ½ÎÄ¼şÊä³öÁ÷ÖĞ¡£
+		System.out.println("clearheadåé¢");
+		// å°†å¾—åˆ°çš„æ–‡ä»¶å†…å®¹è¯»å…¥åˆ°æ–‡ä»¶è¾“å‡ºæµä¸­ã€‚
 		int data = -1;
 		byte b[] = new byte[10024];
 		while ((data = dis.read(b, 0, 10000)) != -1) {
@@ -481,17 +481,17 @@ class Download implements Runnable {
 		}
 		fos.flush();
 
-		// ¹Ø±ÕÊäÈëÊä³öÁ÷
+		// å…³é—­è¾“å…¥è¾“å‡ºæµ
 		is.close();
 		dis.close();
 		fos.close();
 		if (tSocket.isConnected() && !tSocket.isClosed())
 			tSocket.close();
-		System.out.println(srcfile.getName() + "ÏÂÔØÍê³É");
+		System.out.println(srcfile.getName() + "ä¸‹è½½å®Œæˆ");
 		// TODO
 	}
 
-	//Ö±½ÓÓÃurl.getHost()ºÍurl.getPath();·¢ÏÖÓĞºÜ¶àÎŞ·¨ÕıÈ·»ñµÃÂ·¾¶£¬ËùÒÔ×Ô¼ºĞ´ÁËÒ»¸ö
+	//ç›´æ¥ç”¨url.getHost()å’Œurl.getPath();å‘ç°æœ‰å¾ˆå¤šæ— æ³•æ­£ç¡®è·å¾—è·¯å¾„ï¼Œæ‰€ä»¥è‡ªå·±å†™äº†ä¸€ä¸ª
 	public String getHost(String urlString) {
 		urlString = urlString.substring(7);
 		int index = urlString.indexOf("/");
