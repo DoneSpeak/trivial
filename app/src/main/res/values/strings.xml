@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Catcher</string>
+    <string name="edt_hint">请输入需要下载的资源网址</string>
+    <string name="btn_sure">确定</string>
+    <string name="tip">提示</string>
+    <string name="warning">警告</string>
+    <string name="notDownload">无法下载文件</string>
+    <string name="testUrl">http://blog.csdn.net/weich_java/article/details/7002829</string>
+</resources>
