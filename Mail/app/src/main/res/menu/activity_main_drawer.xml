@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--tabs[] = {"inbox","sendMail","flagMail","addrbook","spam","drafts","deleteMail"};-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inbox"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/item_inbox" />
+        <item
+            android:id="@+id/nav_sendmail"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/item_sendMail" />
+        <item
+            android:id="@+id/nav_flagmail"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/item_flagMail" />
+        <item
+            android:id="@+id/nav_addrbook"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/item_addrbook" />
+        <item
+            android:id="@+id/nav_drafs"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/item_drafts" />
+        <item
+            android:id="@+id/nav_spam"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/item_spam" />
+        <item
+            android:id="@+id/nav_deletemail"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/item_deletedMail" />
+
+    </group>
+
+    <item android:title="其他">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/item_log" />
+        </menu>
+    </item>
+
+</menu>

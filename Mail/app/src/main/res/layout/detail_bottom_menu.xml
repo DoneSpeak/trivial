@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_bottom_height"
+    android:orientation="horizontal"
+    android:background="@android:color/white">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/bar_bottom_button">
+        <ImageButton
+            android:id="@+id/bbar_flag"
+            android:src="@drawable/small_cricul"
+            style="@style/bar_bottom_image">
+        </ImageButton>
+        <TextView
+            android:text="标记"
+            style="@style/bar_bottom_text"/>
+        >
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/bar_bottom_button">
+        <ImageButton
+            android:id="@+id/bbar_delete"
+            android:src="@drawable/small_cricul"
+            style="@style/bar_bottom_image">
+        </ImageButton>
+        <TextView
+            android:text="删除"
+            style="@style/bar_bottom_text"/>
+        >
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/bar_bottom_button">
+        <ImageButton
+            android:id="@+id/bbar_reply"
+            android:src="@drawable/small_cricul"
+            style="@style/bar_bottom_image">
+        </ImageButton>
+        <TextView
+            android:text="回复"
+            style="@style/bar_bottom_text"/>
+        >
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/bar_bottom_button">
+        <ImageButton
+            android:id="@+id/bbar_transmit"
+            android:src="@drawable/small_cricul"
+            style="@style/bar_bottom_image">
+        </ImageButton>
+        <TextView
+            android:text="转发"
+            style="@style/bar_bottom_text"/>
+        >
+    </LinearLayout>
+
+
+</LinearLayout>

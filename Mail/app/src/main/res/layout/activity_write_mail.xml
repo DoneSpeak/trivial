@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="donespeak.com.mail.Activity_WriteMail">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_topmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        >
+        <include layout="@layout/write_top_menu" />
+    </RelativeLayout>
+
+    <!-- 正文区域-->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_topmenu"
+        android:paddingLeft="@dimen/conten_horizontal_padding"
+        android:paddingRight="@dimen/conten_horizontal_padding"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/conten_horizontal_padding"
+                android:stretchColumns="1">
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="主  题: " />
+                    <EditText
+                        android:id="@+id/mail_write_title"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="收件人: "
+                        android:singleLine="true"/>
+                    <EditText
+                        android:id="@+id/mail_write_to"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="抄  送: "
+                        android:singleLine="true"/>
+                    <EditText
+                        android:id="@+id/mail_write_cc"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="密  送: "
+                        android:singleLine="true"/>
+                    <EditText
+                        android:id="@+id/mail_write_bcc"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <EditText
+                android:id="@+id/mail_write_content"
+                android:text="\r\n\r\n来自GR邮箱"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
