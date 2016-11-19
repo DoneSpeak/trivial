@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>课间</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="semantic/semantic.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="semantic/semantic.js"></script>
+</head>
+<body>
+	<!--导航栏信息-->
+	<div class="ui fixed inverted menu">
+	    <div class="ui container">
+	      	<a href="#" class="header item">
+	        	<img class="logo" src="img/logo.png">
+	        	<span class="nav-name">课间</span>
+	     	</a>
+	      	<a href="#" class="item">首页</a>
+	      	<div class="ui simple dropdown item">
+	        菜单 <i class="dropdown icon"></i>
+		        <div class="menu">
+		          	<a class="item" href="#">个人主页</a>
+		          	<div class="divider"></div>
+		          	<a class="item" href="#">登出</a>	      		
+	      		</div>
+	    	</div>
+	    </div>
+  	</div>
+	<div class="main">
+		<!-- 个人信息 -->
+		<h2 class="ui header">
+		  <img src="img/狗狗.jpg">
+		  <div class="content">
+		    DoneSpeak
+		    &nbsp;<img src="img/male.png">
+		    <div class="sub header">Check out our plug-in marketplace</div>
+		  </div>
+		</h2>
+		<!--展示留言-->
+		<div class="ui segment">
+			<div class="msg-content">
+				<pre><p>这是内容</p></pre>
+				<div>
+					<span class="tag"><span>发布</span>2016-11-17 09:17</span>
+					<span class="tag"><span>最近</span>2016-11-17 09:17</span>
+					<span class="tag right">
+						<span>浏览(21)</span>
+						<span>留言(8)</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="ui segment">
+			<div class="msg-content">
+				<pre><p>这是内容</p></pre>
+				<div>
+					<span class="tag"><span>发布</span>2016-11-17 09:17</span>
+					<span class="tag"><span>最近</span>2016-11-17 09:17</span>
+					<span class="tag right">
+						<span>浏览(21)</span>
+						<span>留言(8)</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="ui segment">
+			<div class="msg-content">
+				<pre><p class="msg-text">这是内容</p></pre>
+				<div>
+					<span class="tag"><span>发布</span>2016-11-17 09:17</span>
+					<span class="tag"><span>最近</span>2016-11-17 09:17</span>
+					<span class="tag right">
+						<span>浏览(21)</span>
+						<span>留言(8)</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--脚部信息-->
+	<div class="footer">
+		<div class="about">
+			<a class="github" href="www.github.com/donespeak">Github</a>
+			<a class="csdn" href="blog.csdn.net/donespeak">CSDN</a>
+			<span class="email">yangguanr@gmail.com</span>
+			<span class="copyright">&copy;DoneSpeak.inc</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+	    // 点击按钮弹出下拉框
+	    $('.ui.dropdown').dropdown();
+	    // 鼠标悬浮在头像上，弹出气泡提示框
+	    $('.post-content .avatar').popup({
+	      inline: true,
+	      position: 'bottom right',
+	      lastResort: 'bottom right',
+	    });
+  	</script>
+</body>
+</html>
