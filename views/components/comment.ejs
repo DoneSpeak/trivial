@@ -1,0 +1,17 @@
+<div class="comment">
+    <span class="avatar">
+    	<img src="/img/avatar/<%= comment.writer.avatar %>">
+    </span>
+    <div class="content">
+    	<a class="author" href="#"><%= comment.writer.name %></a>
+    	<div class="metadata">
+        	<span class="date"><%= comment.createdTime %></span>
+    	</div>
+     	<pre><%- comment.content %></pre>
+        <% if (user && comment.writer._id && user._id.toString() === comment.writer._id.toString()) { %>
+        <div class="actions">
+          	<a class="reply" href="/msgs/<%= msg._id %>/comment/<%= comment._id %>/remove">删除</a>
+        </div>
+        <% } %>
+    </div>
+</div>

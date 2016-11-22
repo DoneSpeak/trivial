@@ -1,0 +1,25 @@
+<%- include('components/header') %>
+
+<!-- 主体 -->
+<div class="main">
+	<!-- 消息提示 -->
+	<%- include('components/notification') %>
+	<!-- 发布留言 -->
+	<div class="msg-form">
+		<form class="ui form segment" method="post" action="msgs">
+			<div class="field required">
+				<textarea class="input-text" name="content" rows="6"></textarea>
+			</div>
+			<div>
+				<input type="submit" class="ui button" value="发布" />
+				<span class="words-count">0/140</span>
+			</div>
+		</form>
+	</div>
+	<!--展示留言-->
+	<% msgs.forEach(function (msg) { %>
+	  	<%- include('components/msg-content', { msg: msg }) %>
+	<% }) %>
+</div>
+
+<%- include('components/footer') %>

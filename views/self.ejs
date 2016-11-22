@@ -1,0 +1,13 @@
+<%- include('components/header') %>
+
+<!-- 主体 -->
+<div class="main">
+	<!-- 个人信息 -->
+	<%- include('components/selfinfo') %>
+	<!--展示留言-->
+	<% msgs.forEach(function (msg) { %>
+	  	<%- include('components/msg-content-self.ejs', { msg: msg }) %>
+	<% }) %>
+</div>
+
+<%- include('components/footer') %>

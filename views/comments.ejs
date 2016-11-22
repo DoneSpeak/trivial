@@ -1,0 +1,25 @@
+<%- include('components/header') %>
+
+<div class="main">
+	<!--展示留言-->
+	<%- include('components/msg-content') %>
+	<!-- 评论 -->
+	<div class="ui segment">
+		<div class="ui minimal comments">
+		<h3 class="ui dividing header">评论</h3>
+		<!-- 留言区域 -->
+		<% comments.forEach(function(comment){ %>
+			<%- include('components/comment',{comment:comment }) %>
+		<% }) %>
+		<!-- 输入留言 -->
+		<form class="ui reply form" method="post" action="/msgs/<%= msg._id %>/comment">
+		    <div class="field">
+		    	<textarea class="input-text" name="content"></textarea>
+		    </div>
+		    <input type="submit" class="ui icon button" value="评论" /><span class="words-count">0/140</span>
+		  </form>
+		</div>
+	</div>
+</div>
+
+<%- include('components/footer') %>

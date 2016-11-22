@@ -1,0 +1,191 @@
+.body{
+	margin:0;
+	padding:0;
+	background-color: #000;
+}
+
+.main{
+	width:45%;
+	min-width:33em;
+	margin:auto;
+	padding-top:3.3em;
+}
+
+a:hover {
+  border-bottom: 3px solid #4fc08d;
+}
+
+/*---------- 导航栏 --------------*/
+.ui.fixed.inverted{
+	height:2.6em;
+	background-color:#4fc08d;
+}
+
+.nav-name{
+	margin-left:0.3em;
+	font-size:1.4em;
+}
+/* ------- content --------- */
+.words-count{
+	color:#999999;
+}
+
+/*------- message --------*/
+.avatar-link{
+	display:block;
+  	border-radius: 3px;
+	float:left;
+	width:9%;
+	margin:0;
+}
+
+.avatar {
+  border-radius: 3px;
+  width: 100%;
+}
+
+.msg-content.all{
+	width:90%;
+	margin:0;
+	float:right;
+}
+
+.clear{
+	clear:both;
+}
+
+.msg-content h3 a {
+  color: #4fc08d !important;
+}
+
+.msg-content .tag {
+  font-size: 13px;
+  margin-right: 5px;
+  color: #999;
+}
+
+.msg-content .tag.right {
+  float: right;
+  margin-right: 0;
+}
+
+.msg-content .tag.right a {
+  color: #999;
+}
+
+.button {
+  background-color: #4fc08d !important;
+  color: #fff !important;
+}
+
+
+.view a:hover {
+  border-bottom: 1px solid #4fc08d;
+}
+
+.comment.link a:hover {
+  border-bottom: 1px solid #4fc08d;
+}
+
+.edit a:hover {
+  border-bottom: 1px solid #4fc08d;
+}
+
+.delete a:hover {
+  border-bottom: 1px solid #4fc08d;
+}
+
+/*------------ footer ------------------*/
+.footer{
+	width:100%;
+	height:4em;
+	margin-top:2em;
+}
+
+.about{
+	width:45%;
+	margin:auto;
+}
+
+.email{
+	margin-left:2em;
+}
+
+.copyright{
+	float:right;
+}
+
+/*---------- self.html -----------*/
+
+/*---------- signup.html ---------*/
+.space.login{
+	margin:8em auto;
+}
+.login-form{
+	width:80%;
+	min-width:28em;
+	margin:auto;
+	margin-bottom:8em;
+}
+/*---------- signin.html ---------*/
+.ui.error.message{
+	width:80%;
+	min-width:28em;
+	margin:0.8em auto;
+}
+
+.ui.success.message{
+	width:80%;
+	min-width:28em;
+	margin:0.8em auto;
+}
+
+.signin-form{
+	width:80%;
+	min-width:28em;
+	margin:auto;
+}
+
+@media only screen and (max-width: 35em){
+	.main{
+		width:95%;
+		margin:auto;
+		min-width: unset;
+	}
+	.about{
+		width:95%;
+		margin:auto;
+	}
+	.github,.csdn,.email,.copyright{
+		float:none;
+		display: block;
+		margin:auto;
+		text-align: center;
+	}
+}
+
+/*----------- comment -----------*/
+
+/*----------- edit ------------- */
+.msg-form.edit{
+	margin-top:3em;
+}
+
+/*------------- notfound -----------------*/
+.notfound{
+	text-align: center;
+	font-size:8em;
+	font-weight:bolder;
+	color:#666666;
+	padding-top:2em;
+}
+
+.notfound span{
+	font-size:0.4em;
+}
+
+/*---------------- error -------------------*/
+.error{
+	width:80%;
+	margin:auto;
+}
