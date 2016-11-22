@@ -33,7 +33,7 @@
   	<!-- 主体 -->
 	<div class="main">
 		<!--发布留言-->
-		<div class="msg-form">
+		<div class="msg-form edit">
 			<form class="ui form segment" method="post" action="posts">
 				<div class="field required">
 					<textarea class="input-text" name="content" rows="6"></textarea>
@@ -43,50 +43,6 @@
 					<span class="words-count">0/140</span>
 				</div>
 			</form>
-		</div>
-		<!--展示留言-->
-		<div class="ui segment">
-			<a class="avatar-link" href="#">
-				<img class="avatar" src="img/狗狗.jpg" />
-			</a>
-			<div class="msg-content all">
-				<h3><a href="#">发布人</a></h3>
-				<pre><p class="msg-text">这是内容</p></pre>
-				<div>
-					<span class="tag"><span>发布</span>2016-11-17 09:17</span>
-					<span class="tag"><span>最近</span>2016-11-17 09:17</span>
-					<span class="tag right">
-						<span>浏览(21)</span>
-						<span>留言(8)</span>
-						<div class="ui inline dropdown">
-			                <div class="text"></div>
-			                <i class="dropdown icon"></i>
-			                <div class="menu">
-			                  	<div class="item"><a href="/posts/<%= post._id %>/edit">编辑</a></div>
-			                  	<div class="item"><a href="/posts/<%= post._id %>/remove">删除</a></div>
-			                </div>
-			            </div>
-					</span>
-				</div>
-			</div>
-			<div class="clear"></div> 
-		</div>
-		<div class="ui segment">
-			<a class="avatar-link" href="#">
-				<img class="avatar" src="img/狗狗.jpg" />
-			</a>
-			<div class="msg-content all">
-				<h3><a href="#">发布人</a></h3>
-				<pre><p>这是内容</p></pre>
-				<div>
-					<span class="tag"><span>发布</span>2016-11-17 09:17</span>
-					<span class="tag right">
-						<span>浏览(21)</span>
-						<span>留言(8)</span>
-					</span>
-				</div>
-			</div>
-			<div class="clear"></div> 
 		</div>
 	</div>
 	<!--脚部信息-->

@@ -132,3 +132,8 @@ a:hover {
 }
 
 /*----------- comment -----------*/
+
+/*----------- edit ------------- */
+.msg-form.edit{
+	margin-top:3em;
+}
