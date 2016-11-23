@@ -66,7 +66,7 @@ router.get('/:msgId',function(req, res, next){
 		if(!msg){
 			// 判断请求是否有效
 			//评论者在发布者删除之后进行访问
-			throw new Error('留言不存在不存在');
+			throw new Error('留言不存在');
 		}
 		//将结果进行渲染
 		res.render('comments',{
@@ -169,9 +169,13 @@ router.get('/:msgId/remove',checkLogin,function(req, res, next){
 	//[数据库操作] 删除
 	MsgModel.delMsgById(msgId, writer)
 		.then(function(){
-			// req.flash('success','留言删除成功');
-			//重定向到主页
-			res.redirect('/msgs');
+			//删除该该留言下的所有评论
+			CommentModel.delCommentByMsgId(msgId,writer)
+				.then(function(){
+					// req.flash('success','留言删除成功');
+					//重定向到主页
+					res.redirect('/msgs');
+				})
 		})
 		.catch(next);
 })

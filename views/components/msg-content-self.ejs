@@ -9,7 +9,7 @@
 			<span class="tag right">
 				<span class="view"><a href="/msgs/<%=msg._id %>">浏览</a>(<%= msg.viewCount %>)</span>
 				<span class="comment link"><a href="/msgs/<%=msg._id %>">评论</a>(<%= msg.commentsCount %>)</span>
-				<% if (user){ %>
+				<% if (user && user._id.toString() === msg.writer._id.toString() ){ %>
 					<div class="ui inline dropdown">
 		                <div class="text"></div>
 		                <i class="dropdown icon"></i>

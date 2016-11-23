@@ -39,7 +39,7 @@ a:hover {
 	margin:0;
 }
 
-.avatar {
+.avatar{
   border-radius: 3px;
   width: 100%;
 }
@@ -116,7 +116,9 @@ a:hover {
 }
 
 /*---------- self.html -----------*/
-
+.ui.header img{
+  border-radius: 3px;
+}
 /*---------- signup.html ---------*/
 .space.login{
 	margin:8em auto;
@@ -128,6 +130,13 @@ a:hover {
 	margin-bottom:8em;
 }
 /*---------- signin.html ---------*/
+
+.signin-form{
+	width:80%;
+	min-width:28em;
+	margin:auto;
+}
+
 .ui.error.message{
 	width:80%;
 	min-width:28em;
@@ -140,10 +149,14 @@ a:hover {
 	margin:0.8em auto;
 }
 
-.signin-form{
-	width:80%;
-	min-width:28em;
-	margin:auto;
+.ui.error.message.edit,.ui.error.message.msgs{
+	width:100%;
+	min-width:unset;
+}
+
+.ui.success.message.edit,.ui.success.message.msgs{
+	width:100%;
+	min-width:unset;
 }
 
 @media only screen and (max-width: 35em){
@@ -156,6 +169,7 @@ a:hover {
 		width:95%;
 		margin:auto;
 	}
+
 	.github,.csdn,.email,.copyright{
 		float:none;
 		display: block;
@@ -167,9 +181,6 @@ a:hover {
 /*----------- comment -----------*/
 
 /*----------- edit ------------- */
-.msg-form.edit{
-	margin-top:3em;
-}
 
 /*------------- notfound -----------------*/
 .notfound{

@@ -2,7 +2,7 @@
 
 <!-- 主要内容区 -->
 <div class="main">
-	<%- include('components/notification') %>
+	<%- include('components/notification',{path:'signin'}) %>
 	<div class="signin-form">
 		<form class="ui form segment" method="post" enctype="multipart/form-data">
 			<div class="field required">
@@ -30,7 +30,7 @@
 				<input type="file" name="avatar">
 			</div>
 			<div class="field required">
-				<label>个人简介</label>
+				<label>个性签名</label>
 				<textarea name="bio" rows="4" v-model="user.bio"></textarea>
 			</div>
 			<input type="submit" class="ui button fluid" value="注册">

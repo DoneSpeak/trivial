@@ -28,6 +28,12 @@ module.exports = {
     	return Comment.remove({ writer: writer, _id: commentId }).exec();
   	},
 
+    // 通过用户 id 和留言 id 删除一个留言下的所有评论
+    delCommentByMsgId: function delCommentByMsgId(msgId, writer) {
+      //[数据库操作] 删除记录
+      return Comment.remove({ msgId: msgId, writer: writer }).exec();
+    },
+
   	// 通过留言 id 获取该留言下所有评论，按评论创建时间升序
   	getComments: function getComments(msgId) {
     	return Comment

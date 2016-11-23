@@ -1,11 +1,11 @@
 <% if (success) { %>
-    <div class="ui success message">
+    <div class="ui success message <%= path %>">
       <p><%= success %></p>
     </div>
   <% } %>
 
   <% if (error) { %>
-    <div class="ui error message">
+    <div class="ui error message <%= path %>"">
       <p><%= error %></p>
     </div>
 <% } %>

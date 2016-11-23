@@ -22,8 +22,8 @@ module.exports = function(app){
   	// 404 页
   	// 没有找到的路径都会来到这里
   	app.use(function (req, res) {
-    if (!res.headersSent) {
-      res.render('404');
+        if (!res.headersSent) {
+          res.render('404');
     }
   });
 
