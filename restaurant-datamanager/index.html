@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>馋猫甜品店</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="./bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/style.css" rel="stylesheet"/>
+ 		<script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <!-- 顶端固定导航栏 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        	<!-- 屏幕小时出现的小菜单按钮 -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <!-- 三条横杆 -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand"><img class="site-name" src="img/site-name.png"><span>小馋猫家后院的小花园</span></span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">设置</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">退出</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div class="menu-title"></div>
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse-One">
+                 <span class="glyphicon glyphicon-th-large menu-head"></span>&nbsp;&nbsp;数据表
+                </a>
+              </div>
+              <div id="collapse-One" class="accordion-body collapse in">
+                  <ul>
+                    <li ><a class="current" href="#">菜单</a></li>
+                    <li><a href="#">原料</a></li>
+                    <li><a href="#">订单</a></li>
+                    <li><a href="#">业务数据</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse-Two">
+                 <span class="glyphicon glyphicon-search menu-head"></span>&nbsp;&nbsp;查询
+                </a>
+              </div>
+              <div id="collapse-Two" class="accordion-body collapse">
+                  <ul>
+                    <li ><a href="#">订单详情</a></li>
+                    <li><a href="#">商品销售汇总</a></li>
+                    <li><a href="#">原料消耗</a></li>
+                  </ul>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse-Thrid">
+                   <span class="glyphicon glyphicon-wrench menu-head"></span>&nbsp;&nbsp;小工具
+                  </a>
+                </div>
+                <div id="collapse-Thrid" class="accordion-body collapse">
+                  <ul>
+                    <li ><a href="#">两时间相隔天数</a></li>
+                    <li><a href="#">最大匹配字符串</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2"></div>
+        <div class="col-sm-9 col-md-10 main">
+          <h2 class="sub-header">菜单</h2>
+          <div class="data-edit-insert">
+            <input type="text" name="" placeholder="test" /><button class="edit-insert"><span class="glyphicon glyphicon-plus"></span></button>
+            <!-- glyphicon glyphicon-refresh -->
+          </div>
+          <div class="table-responsive table-shadow">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Operator</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td><span class="operator edit"><span class="glyphicon glyphicon-pencil"></span></span>&nbsp;&nbsp;&nbsp;<span class="operator del"><span class="glyphicon glyphicon-minus"></span></span></td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
