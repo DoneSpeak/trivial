@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./necessary/head.ejs") %>
+    <title>登陆界面</title>
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" role="form" method="post">
+        <h2 class="form-signin-heading"><%= info %></h2>
+        <input type="email" class="form-control" placeholder="Email address" name="email" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="signIn">Sign in</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="register">Register</button>
+
+      </form>
+
+    </div> <!-- /container -->
+
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
