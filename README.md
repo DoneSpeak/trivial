@@ -3,11 +3,14 @@
 &emsp;&emsp;这是一个很久以前就写了的代码，一直懒于相关的文档说明，所以一直一拖再拖，拖了很久。这个版本的说明还是比较简单的，如果整个张开来说的话，其实可以说上不少内容的。具体的源码可以到我的个人github上下载：https://github.com/DoneSpeak/java_Dos_Dir。
 
 # 功能实现列表
-[这里写图片描述](http://img.blog.csdn.net/20170213195658479?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](http://img.blog.csdn.net/20170213195658479?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 #需求分析 
 ## 指令功能了解
 &emsp;&emsp;通过help dir指令，我们可以查看dir指令的相关参数很选项以及对应的功能。当然为了更好的理解指令的的使用，我们还需要到网上去搜一些相关的讲解资料以及自己动手实际操作一遍。
-[dir基本功能目录](http://img.blog.csdn.net/20170213172409168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![dir基本功能目录](http://img.blog.csdn.net/20170213172409168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 ## 指令分类
 &emsp;&emsp;为了更好的吃掉这一只大象，我们需要将其划分成更容易实现和理解的多个小部分。通过实际了解以及实际操作，我们可以将所有的选项划分如下：
 |类型|指令|作用|指令间关系|
@@ -61,12 +64,18 @@ Java Dir /?</td><tr>
 #代码结构
 ## 整体结构
  &emsp;&emsp;指令输入主要包含三种信息：dir指令（包含选项）、检索目录或者文件。由于指令输入可以很长，比如：D:\TestFolder /a-h-r-s  /s  /d/w/x/n/oe-ns  /l/t:wca/q，该指令中包含了很多的组合信息，所以第一步我们需要对指令进行解析，解析出指令及相关选项，目录或者文件，以及判断出目录或者文件的字符串是否为正则表达式。解析完成之后，按照分类以及选项之间的相互关系对指令进行筛选，排序和显示（显示中会包含修饰）。
-[整体框架](http://img.blog.csdn.net/20170213175828173?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![整体框架](http://img.blog.csdn.net/20170213175828173?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 ## 详细结结构
 &emsp;&emsp;代码需要运行在windows下的cmd界面中，所以输入的字符串为参数数组args[]。之后的流程是对以上整体结果进行细化。
-[详细结构](http://img.blog.csdn.net/20170213175928236?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![详细结构](http://img.blog.csdn.net/20170213175928236?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 &emsp;&emsp;在处理完成之后，我们在显示之前进行了一次修饰，由于需要考虑显示类型选项之间的互斥关系，以及一些其他的只对部分显示选项才有效，所显示过程还有如下的流程关系。
-[comdE.modifyElements对显示进行修饰](http://img.blog.csdn.net/20170213180024125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![comdE.modifyElements对显示进行修饰](http://img.blog.csdn.net/20170213180024125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 ## 几个重要的类
 |类名|成员变量|描述|
 |----|----------|----|
@@ -80,7 +89,9 @@ CommandTokenizer. commandTokenizer
 (String[] source, CommandElements cmdE, ArrayList<SearchObject> searchObj)
 ```
 &emsp;&emsp;指令解析主要由类CommandTokenizer的commandTokenizer方法实现。source为输入的指令字符串，参数cmdE和searchObj为解析之后结果。
+
 ![指令解析](http://img.blog.csdn.net/20170213192306838?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRG9uZVNwZWFr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 指令解析
 ## 选项a
 **重点：获取文件的属性**
