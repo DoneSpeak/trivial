@@ -1,0 +1,25 @@
+<div class="ui segment">
+	<div class="msg-content">
+		<p><%- msg.content %></p>
+		<div>
+			<span class="tag"><span>发布</span><%= msg.createdTime %></span>
+			<% if( msg.createdTime !== msg.editedTime ){ %>
+				<span class="tag"><span>最近</span><%= msg.editedTime %></span>
+			<% } %>
+			<span class="tag right">
+				<span class="view"><a href="/msgs/<%=msg._id %>">浏览</a>(<%= msg.viewCount %>)</span>
+				<span class="comment link"><a href="/msgs/<%=msg._id %>">评论</a>(<%= msg.commentsCount %>)</span>
+				<% if (user && user._id.toString() === msg.writer._id.toString() ){ %>
+					<div class="ui inline dropdown">
+		                <div class="text"></div>
+		                <i class="dropdown icon"></i>
+		                <div class="menu">
+		                  	<div class="item"><a href="/msgs/<%= msg._id %>/edit">编辑</a></div>
+		                  	<div class="item"><a href="/msgs/<%= msg._id %>/remove">删除</a></div>
+		                </div>
+		            </div>
+		        <% } %>
+			</span>
+		</div>
+	</div>
+</div>

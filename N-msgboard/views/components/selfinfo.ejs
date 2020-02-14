@@ -1,0 +1,9 @@
+<!-- 个人信息 -->
+<h2 class="ui header">
+  <img src="/img/avatar/<%= writer.avatar %>"">
+  <div class="content">
+    <%= writer.name %>
+    &nbsp;<img src="/img/<%= ({m: 'male', f: 'female', x: 'secrecy'})[writer.gender] %>.png">
+    <div class="sub header"><%= writer.bio %></div>
+  </div>
+</h2>

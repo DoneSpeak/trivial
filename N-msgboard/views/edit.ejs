@@ -1,0 +1,23 @@
+<%- include('components/header') %>
+
+<!-- 主体 -->
+<div class="main">
+
+	<!-- 消息提示 -->
+	<%- include('components/notification',{path:'edit'}) %>
+	
+	<!--发布留言-->
+	<div class="msg-form edit">
+		<form class="ui form segment" method="post" action="edit">
+			<div class="field required">
+				<textarea class="input-text" name="content" rows="6"><%= msg.content %></textarea>
+			</div>
+			<div>
+				<input type="submit" class="ui button" value="发布" />
+				<span class="words-count"><%= wordNum %>/140</span>
+			</div>
+		</form>
+	</div>
+</div>
+
+<%- include('components/footer') %>

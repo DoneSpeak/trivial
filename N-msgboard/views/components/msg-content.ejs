@@ -1,0 +1,30 @@
+<div class="ui segment">
+	<a class="avatar-link" href="self?writer=<%=msg.writer._id%>">
+		<img class="avatar" src="/img/avatar/<%=msg.writer.avatar %>" />
+	</a>
+	<div class="msg-content all">
+		<h3><a href="self?writer=<%=msg.writer._id%>"><%= msg.writer.name %></a></h3>
+		<p><%- msg.content %></p>
+		<div>
+			<span class="tag"><span>发布</span><%= msg.createdTime %></span>
+			<% if( msg.createdTime !== msg.editedTime ){ %>
+				<span class="tag"><span>最近</span><%= msg.editedTime %></span>
+			<% } %>
+			<span class="tag right">
+				<span class="view"><a href="/msgs/<%=msg._id %>">浏览</a>(<%= msg.viewCount %>)</span>
+				<span class="comment link"><a href="/msgs/<%=msg._id %>">评论</a>(<%= msg.commentsCount %>)</span>
+				<% if (user && user._id.toString() === msg.writer._id.toString() ){ %>
+					<div class="ui inline dropdown">
+		                <div class="text"></div>
+		                <i class="dropdown icon"></i>
+		                <div class="menu">
+		                  	<div class="item edit"><a href="/msgs/<%= msg._id %>/edit">编辑</a></div>
+		                  	<div class="item delete"><a href="/msgs/<%= msg._id %>/remove">删除</a></div>
+		                </div>
+		            </div>
+		        <% } %>
+			</span>
+		</div>
+	</div>
+	<div class="clear"></div> 
+</div>
