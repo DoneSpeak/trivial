@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./necessary/head.ejs") %>
+    <title>Student Manager</title>
+    <link href="/stylesheets/userinfo.css" rel="stylesheet">
+  </head>
+
+<body>
+
+<div class="container">
+  <%- include("./necessary/navigation.ejs") %>
+  <!--  假设用户名还未被设置-->
+  <% if(user.name == undefined) { %>
+
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Congratulation !</strong> Registration Successful.
+  </div>
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    All the information below can only be submit <strong>once</strong>, do check before you submit.
+  </div>
+
+
+  <form id="form-userinfo" method ="post">
+
+    <fieldset class="form-group" disabled="true">
+      <label for="form-username">Your email</label>
+      <input type="text" id="form-email" class = "form-control" name="useremail" value= <%= user.email %>>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="form-username">Your name</label>
+      <input type="text" id="form-username" class = "form-control" name="username" >
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="form-class">Class</label>
+      <select class="form-control" id="form-class" name="classNum"  >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="form-sex">Sex</label>
+      <select class="form-control" id="form-sex" name="userSex"  >
+        <option>female</option>
+        <option>male</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group" >
+      <label for"form-role">Your Identity</label>
+      <select class="form-control" id="form-role" disabled>
+        <option>班长</option>
+        <option>团支书</option>
+        <option>学习委员</option>
+        <option>课代表</option>
+        <option selected="true">班级成员</option>
+      </select>
+    </fieldset>
+    <button type="submit" class="btn btn-primary btn-block btn-lg" id='form-submit' >Submit</button>
+  </form>
+
+  <% } else{ %>
+    <div class="alert alert-danger" role="alert">
+    <strong>Warning</strong> 你已经编辑过这些内容，已不可修改
+    </div>
+
+    <form id="form-userinfo" method ="post">
+
+      <fieldset class="form-group" disabled="true">
+        <label for="form-username">Your email</label>
+        <input type="text" id="form-email" class = "form-control" name="useremail" value= <%= user.email %>>
+      </fieldset>
+
+      <fieldset class="form-group" disabled="true">
+        <label for="form-username">Your name</label>
+        <input type="text" id="form-username" class = "form-control" name="username" value= <%= user.name %>>
+      </fieldset>
+
+      <fieldset class="form-group" disabled="true">
+        <label for="form-class">Class</label>
+        <input type="text" id="form-username" class = "form-control" name="class" value= <%= user.class_id %>>
+      </fieldset>
+
+      <fieldset class="form-group" disabled="true">
+        <label for="form-sex">Sex</label>
+        <input type="text" id="form-username" class = "form-control" name="sex" value= <%= user.sex %>>
+      </fieldset>
+
+      <fieldset class="form-group" disabled="true" >
+        <label for"form-role">Your Identity</label>
+        <input type="text" id="form-username" class = "form-control" name="role" value= <%= user.role_name %>>
+      </fieldset>
+
+    </form>
+
+    <% } %>
+
+
+    <footer>
+      <p>&copy; Company 2016 Powered by Caren</p>
+    </footer>
+    <%- include("./necessary/bootstrapJS.ejs") %>
+    </body>
+</div> <!-- end of div container -->
+
+
+
+
+
+
+
+</html>

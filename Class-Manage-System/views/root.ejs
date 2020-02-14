@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./necessary/head.ejs") %>
+    <title>系统管理页面</title>
+    <script>
+
+    </script>
+  </head>
+
+<body>
+<%- include("./necessary/navigation.ejs") %>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    管理员登陆成功！欢迎ROOT用户<strong>「嘉文」</strong>
+  </div>
+
+    <!-- <div id="tree"></div> -->
+  <form method='post'>
+    <div class="panel panel-primary">
+    <!-- Default panel contents -->
+    <div class="panel-heading">角色权限管理</div>
+    <div class="panel-body">
+      <p>作为ROOT用户，你可以管理角色的权限。</p>
+    </div>
+      <table class="table table-hover table-bordered">
+      <tr>
+        <th>角色 \ 权利</th>
+        <th>开班会帖</th>
+        <th>收班费帖</th>
+        <th>收党费贴</th>
+        <th>评优等生帖</th>
+        <th>考勤结果帖</th>
+      </tr>
+      <tr>
+        <th>班长</th>
+        <% for(var i = 0; i< allrights[1].length; i++){ %>
+          <% if(allrights[0][i]==1){ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox" checked="true"> </td>
+          <%} else{ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox"></td>
+        <% }} %>
+      </tr>
+      <tr>
+        <th>团支书</th>
+        <% for(var i = 0; i< allrights[1].length; i++){ %>
+          <% if(allrights[1][i]==1){ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox" checked="true"> </td>
+          <%} else{ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox"></td>
+        <% }} %>
+        </tr>
+      <tr>
+        <th>学习委员</th>
+        <% for(var i = 0; i< allrights[1].length; i++){ %>
+          <% if(allrights[2][i]==1){ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox" checked="true"> </td>
+          <%} else{ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox"></td>
+        <% }} %>
+      </tr>
+      <tr>
+        <th>课代表</th>
+        <% for(var i = 0; i< allrights[1].length; i++){ %>
+          <% if(allrights[3][i]==1){ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox" checked="true"> </td>
+          <%} else{ %>
+            <td><input name="btSelectItem"  type="checkbox" class="table-checkbox"></td>
+        <% }} %>
+      </tr>
+
+      </table>
+      <div id="hide_value">
+        <input type="hidden" id="data" name='data' value="44444">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block btn-lg" id="confirmButton" name="postBtn" value="roleChanger">提交修改 </button>
+
+  </form>
+  <hr>
+
+
+
+
+
+  <form method='post'  method='post'>
+    <div class="panel panel-info" style="max-height: 500px;overflow:scroll">
+      <!-- Default panel contents -->
+      <div class="panel-heading">用户角色管理</div>
+      <div class="panel-body">
+        <p>同时，你还可以对用户的角色进行修改</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table table-hover table-bordered">
+        <tr>
+          <th>用户id</th>
+          <th>用户名</th>
+          <th>用户Email</th>
+          <th>用户角色</th>
+          <th>修改</th>
+        </tr>
+        <% for(var i = 0; i < alluser.length; i++){ %>
+        <tr>
+          <td> <%= alluser[i].user_id %> </td>
+          <td> <%= alluser[i].name %> </td>
+          <td> <%= alluser[i].email %> </td>
+          <td> <%= alluser[i].role_name %> </td>
+          <td><button type="button" class="btn btn-warning btn-sm"
+             data-toggle="modal" data-target="#myModal" data-id="<%= alluser[i].user_id %>"
+            data-role="<%= alluser[i].role_name %>" data-name =<%= alluser[i].name %> >修改角色 </button></td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </form>
+
+<!--弹出的模态框  -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title">修改用户角色</h4>
+        </div>
+        <div class="modal-body">
+          <p>获取用户信息失败，请关闭窗口重试</p>
+          <div class="dropdown open">
+            <button class = "btn btn-primary dropdown-toggle" type="button" id="dropdownmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            角色</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <button class="dropdown-item btn btn-primary btn-block" type="button">班长</button>
+              <button class="dropdown-item btn btn-primary btn-block" type="button">团支书</button>
+              <button class="dropdown-item btn btn-primary btn-block" type="button">课代表</button>
+              <button class="dropdown-item btn btn-primary btn-block" type="button">学习委员</button>
+              <button class="dropdown-item btn btn-primary btn-block" type="button">班级成员</button>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <form method="post">
+            <button type="submit" class="btn btn-primary" id="modal-submitBtn" name="postBtn" id="postBtn2"
+              value="userChanger">Save changes</button>
+              <div id="hide_value">
+                <input type="hidden" id="data1" name='userId' value="">
+                <input type="hidden" id="data2" name="changeTo" value="">
+              </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+
+
+  <footer>
+    <p>&copy; Company 2016 Powered by Caren</p>
+  </footer>
+
+</div>
+
+
+  <%- include("./necessary/bootstrapJS.ejs") %>
+  <script src="//cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+  <script src="/javascripts/root.js"></script>
+
+  </body>
+
+</html>
