@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+
+    <ImageView
+        android:id="@+id/mail_icon_spam"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:src="@drawable/mail_32px"/>
+
+    <LinearLayout
+        android:layout_weight="1.0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/mail_sender_spam"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="senderName"/>
+
+
+        <TextView
+            android:id="@+id/mail_date_spam"
+            android:textColor="#868686"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mailDate"
+            android:singleLine="true"
+            android:editable="true" />
+
+        <TextView
+        android:id="@+id/mail_title_spam"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mailTilte"/>
+
+        <!--<TextView-->
+        <!--android:id="@+id/mail_decription"-->
+        <!--android:textColor="#868686"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="mailAbstract"-->
+        <!--android:singleLine="true"-->
+        <!--android:editable="true" />-->
+
+    </LinearLayout>
+</LinearLayout>

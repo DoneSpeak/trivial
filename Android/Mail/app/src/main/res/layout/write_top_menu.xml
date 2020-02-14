@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/back"
+        style="@style/back_style">
+    </ImageButton>
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="写邮件"
+    android:textSize="@dimen/font_zn_size_bar"
+    android:textColor="@android:color/white"
+    android:layout_centerVertical="true"
+    android:layout_toRightOf="@id/back"/>
+
+    <ImageButton
+        android:id="@+id/action_send"
+        android:src="@drawable/ic_menu_send"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/arrow_horizontal_margin"
+        android:background="?attr/colorPrimary"/>
+
+</RelativeLayout>
